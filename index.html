@@ -1,0 +1,589 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="Eoin Houstoun — Data Scientist & AI Engineer. Published researcher at AIAI 2025 (Springer). Expert in ML, clinical AI, NLP, and AI engineering.">
+  <meta property="og:title" content="Eoin Houstoun | Data Scientist & AI Engineer">
+  <meta property="og:description" content="Published researcher (AIAI 2025 / Springer) specialising in machine learning, clinical AI, and AI engineering.">
+  <meta property="og:type" content="website">
+
+  <!-- CNAME: To use a custom domain, create a file named CNAME in the repo root with your domain (e.g. eoinhoustoun.com) -->
+
+  <title>Eoin Houstoun | Data Scientist & AI Engineer</title>
+
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+  <!-- ===== NAVIGATION ===== -->
+  <nav id="navbar">
+    <div class="nav-container">
+      <a href="#hero" class="nav-logo">EH</a>
+      <button class="nav-toggle" id="navToggle" aria-label="Toggle navigation" aria-expanded="false">
+        <span></span>
+        <span></span>
+        <span></span>
+      </button>
+      <ul class="nav-links" id="navLinks">
+        <li><a href="#about" class="nav-link">About</a></li>
+        <li><a href="#skills" class="nav-link">Skills</a></li>
+        <li><a href="#projects" class="nav-link">Projects</a></li>
+        <li><a href="#publication" class="nav-link">Publication</a></li>
+        <li><a href="#contact" class="nav-link contact-nav">Hire Me</a></li>
+      </ul>
+    </div>
+  </nav>
+
+  <!-- ===== HERO SECTION ===== -->
+  <section id="hero">
+    <!-- Animated background grid -->
+    <div class="hero-bg">
+      <div class="hero-grid"></div>
+      <div class="hero-orb hero-orb-1"></div>
+      <div class="hero-orb hero-orb-2"></div>
+    </div>
+
+    <div class="hero-content">
+      <!-- Published badge — lead credential -->
+      <div class="published-badge">
+        <span class="badge-pulse"></span>
+        Published Researcher &nbsp;&middot;&nbsp; AIAI 2025 &nbsp;&middot;&nbsp; Springer
+      </div>
+
+      <h1 class="hero-name">Eoin Houstoun</h1>
+
+      <!-- Typing animation cycles through titles -->
+      <h2 class="hero-title">
+        <span id="typingText"></span><span class="cursor" aria-hidden="true">|</span>
+      </h2>
+
+      <p class="hero-sub">
+        Building intelligent systems at the intersection of machine learning, clinical AI, and AI engineering.
+        Lead author of peer-reviewed research published in Springer's
+        <em>Artificial Intelligence Applications and Innovations</em>.
+      </p>
+
+      <div class="hero-ctas">
+        <a href="#projects" class="btn btn-primary">View My Work</a>
+        <a href="#publication" class="btn btn-secondary">Read My Paper</a>
+      </div>
+    </div>
+
+    <!-- Scroll indicator -->
+    <div class="scroll-indicator">
+      <span>Scroll</span>
+      <div class="scroll-arrow"></div>
+    </div>
+  </section>
+
+  <!-- ===== ABOUT SECTION ===== -->
+  <section id="about">
+    <div class="container">
+      <div class="section-header fade-in">
+        <span class="section-label">About</span>
+        <h2>Who I Am</h2>
+      </div>
+
+      <div class="about-grid">
+        <div class="about-photo fade-in">
+          <div class="photo-frame">
+            <img src="docs/assets/headshot.png" alt="Eoin Houstoun" loading="lazy">
+          </div>
+        </div>
+
+        <div class="about-text fade-in">
+          <p>
+            I'm a Data Scientist and AI Engineer with a strong foundation in machine learning, statistical
+            modelling, and clinical AI systems. My research on Alzheimer's disease classification was accepted
+            and published at the <strong>AIAI 2025 International Conference</strong>, featured in Springer's
+            <em>Artificial Intelligence Applications and Innovations</em> — a peer-reviewed venue at the
+            forefront of applied AI research.
+          </p>
+          <p>
+            I specialise in building end-to-end ML systems: from feature engineering and rigorous cross-validation
+            to model deployment and SHAP-based interpretability. On the AI engineering side, I build multi-agent
+            systems, work with the Claude API, and design subagent architectures for complex automated workflows.
+          </p>
+          <p>
+            Whether it's a clinical decision-support tool, a generative AI pipeline, or an NLP chatbot,
+            I bring rigorous methodology and a focus on real-world impact to every project.
+          </p>
+
+          <div class="about-links">
+            <a href="https://github.com/EoinHoustoun" target="_blank" rel="noopener" class="about-link">
+              <svg width="18" height="18" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true">
+                <path d="M12 0C5.374 0 0 5.373 0 12c0 5.302 3.438 9.8 8.207 11.387.599.111.793-.261.793-.577v-2.234c-3.338.726-4.033-1.416-4.033-1.416-.546-1.387-1.333-1.756-1.333-1.756-1.089-.745.083-.729.083-.729 1.205.084 1.839 1.237 1.839 1.237 1.07 1.834 2.807 1.304 3.492.997.107-.775.418-1.305.762-1.604-2.665-.305-5.467-1.334-5.467-5.931 0-1.311.469-2.381 1.236-3.221-.124-.303-.535-1.524.117-3.176 0 0 1.008-.322 3.301 1.23A11.509 11.509 0 0 1 12 5.803c1.02.005 2.047.138 3.006.404 2.291-1.552 3.297-1.23 3.297-1.23.653 1.653.242 2.874.118 3.176.77.84 1.235 1.911 1.235 3.221 0 4.609-2.807 5.624-5.479 5.921.43.372.823 1.102.823 2.222v3.293c0 .319.192.694.801.576C20.566 21.797 24 17.3 24 12c0-6.627-5.373-12-12-12z"/>
+              </svg>
+              GitHub
+            </a>
+            <a href="https://www.mygreatlearning.com/eportfolio/eoin-houstoun" target="_blank" rel="noopener" class="about-link">
+              <svg width="18" height="18" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true">
+                <path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm-2 15l-5-5 1.41-1.41L10 14.17l7.59-7.59L19 8l-9 9z"/>
+              </svg>
+              MIT ePortfolio
+            </a>
+          </div>
+        </div>
+
+        <!-- Stats panel -->
+        <div class="about-stats fade-in">
+          <div class="stat-card">
+            <div class="stat-number">9+</div>
+            <div class="stat-label">ML Projects</div>
+          </div>
+          <div class="stat-card">
+            <div class="stat-number">1</div>
+            <div class="stat-label">Springer<br>Publication</div>
+          </div>
+          <div class="stat-card">
+            <div class="stat-number">10+</div>
+            <div class="stat-label">Frameworks<br>& Tools</div>
+          </div>
+          <div class="stat-card">
+            <div class="stat-number">2025</div>
+            <div class="stat-label">AIAI<br>Conference</div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ===== SKILLS SECTION ===== -->
+  <section id="skills">
+    <div class="container">
+      <div class="section-header fade-in">
+        <span class="section-label">Skills</span>
+        <h2>Technical Expertise</h2>
+      </div>
+
+      <div class="skills-grid">
+        <!-- ML & AI -->
+        <div class="skill-group fade-in">
+          <div class="skill-group-header">
+            <div class="skill-group-icon ml-icon">
+              <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                <circle cx="12" cy="12" r="3"/><path d="M12 1v4M12 19v4M4.22 4.22l2.83 2.83M16.95 16.95l2.83 2.83M1 12h4M19 12h4M4.22 19.78l2.83-2.83M16.95 7.05l2.83-2.83"/>
+              </svg>
+            </div>
+            <h3>ML &amp; AI</h3>
+          </div>
+          <div class="skill-tags">
+            <span class="skill-tag">XGBoost</span>
+            <span class="skill-tag">PyTorch</span>
+            <span class="skill-tag">scikit-learn</span>
+            <span class="skill-tag">Neural Networks</span>
+            <span class="skill-tag">CNNs</span>
+            <span class="skill-tag">SHAP</span>
+            <span class="skill-tag">Feature Engineering</span>
+            <span class="skill-tag">Statistical Analysis</span>
+            <span class="skill-tag">NLP</span>
+            <span class="skill-tag">Random Forest</span>
+            <span class="skill-tag">Monte Carlo CV</span>
+            <span class="skill-tag">Data Visualisation</span>
+          </div>
+        </div>
+
+        <!-- Languages -->
+        <div class="skill-group fade-in">
+          <div class="skill-group-header">
+            <div class="skill-group-icon lang-icon">
+              <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                <polyline points="16 18 22 12 16 6"/><polyline points="8 6 2 12 8 18"/>
+              </svg>
+            </div>
+            <h3>Languages</h3>
+          </div>
+          <div class="skill-tags">
+            <span class="skill-tag lang">Python</span>
+            <span class="skill-tag lang">R</span>
+            <span class="skill-tag lang">SQL</span>
+            <span class="skill-tag lang">HTML / CSS / JS</span>
+          </div>
+        </div>
+
+        <!-- Libraries & Tools -->
+        <div class="skill-group fade-in">
+          <div class="skill-group-header">
+            <div class="skill-group-icon tools-icon">
+              <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                <path d="M14.7 6.3a1 1 0 0 0 0 1.4l1.6 1.6a1 1 0 0 0 1.4 0l3.77-3.77a6 6 0 0 1-7.94 7.94l-6.91 6.91a2.12 2.12 0 0 1-3-3l6.91-6.91a6 6 0 0 1 7.94-7.94l-3.76 3.76z"/>
+              </svg>
+            </div>
+            <h3>Libraries &amp; Tools</h3>
+          </div>
+          <div class="skill-tags">
+            <span class="skill-tag tools">Pandas</span>
+            <span class="skill-tag tools">NumPy</span>
+            <span class="skill-tag tools">Matplotlib</span>
+            <span class="skill-tag tools">Seaborn</span>
+            <span class="skill-tag tools">Gradio</span>
+            <span class="skill-tag tools">DistilBERT</span>
+            <span class="skill-tag tools">VGG19</span>
+            <span class="skill-tag tools">TF-IDF</span>
+            <span class="skill-tag tools">Tkinter</span>
+            <span class="skill-tag tools">Beautiful Soup</span>
+          </div>
+        </div>
+
+        <!-- AI Engineering -->
+        <div class="skill-group fade-in">
+          <div class="skill-group-header">
+            <div class="skill-group-icon ai-icon">
+              <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                <rect x="2" y="3" width="20" height="14" rx="2"/><line x1="8" y1="21" x2="16" y2="21"/><line x1="12" y1="17" x2="12" y2="21"/>
+              </svg>
+            </div>
+            <h3>AI Engineering</h3>
+          </div>
+          <div class="skill-tags">
+            <span class="skill-tag ai-eng">Claude API</span>
+            <span class="skill-tag ai-eng">Multi-Agent Systems</span>
+            <span class="skill-tag ai-eng">Subagent Architecture</span>
+            <span class="skill-tag ai-eng">Prompt Engineering</span>
+            <span class="skill-tag ai-eng">AI Benchmarking</span>
+            <span class="skill-tag ai-eng">AI Optimisation</span>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ===== PROJECTS SECTION ===== -->
+  <section id="projects">
+    <div class="container">
+      <div class="section-header fade-in">
+        <span class="section-label">Projects</span>
+        <h2>Featured Work</h2>
+      </div>
+
+      <div class="projects-grid">
+
+        <!-- 1. LEAD PROJECT: Alzheimer's -->
+        <div class="project-card featured fade-in">
+          <div class="featured-ribbon">Lead Project</div>
+          <div class="card-header">
+            <span class="category-badge badge-research">Research</span>
+            <span class="springer-badge">
+              <svg width="12" height="12" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg>
+              Springer Published
+            </span>
+          </div>
+          <h3>Alzheimer's Disease Classification</h3>
+          <p>
+            Classified individuals into cognitive stages of Alzheimer's disease using machine learning on the
+            Bio-Hermes dataset. Published at the AIAI 2025 International Conference in Springer's
+            <em>Artificial Intelligence Applications and Innovations</em>.
+          </p>
+          <div class="tech-stack">
+            <span>XGBoost</span>
+            <span>Random Forest</span>
+            <span>Monte Carlo CV</span>
+            <span>Feature Selection</span>
+            <span>Python</span>
+          </div>
+          <div class="card-actions">
+            <a href="https://github.com/EoinHoustoun/Alzheimers_Biohermes" target="_blank" rel="noopener" class="card-btn">View on GitHub →</a>
+            <a href="https://link.springer.com/chapter/10.1007/978-3-031-96235-6_5" target="_blank" rel="noopener" class="card-btn card-btn-secondary">Springer Paper →</a>
+          </div>
+        </div>
+
+        <!-- 2. Fever Prediction -->
+        <div class="project-card fade-in">
+          <div class="card-header">
+            <span class="category-badge badge-clinical">Clinical AI</span>
+          </div>
+          <h3>Fever Prediction with Infrared Thermography</h3>
+          <p>
+            Estimates oral temperature and detects fever from non-contact infrared thermal sensor data.
+            Features custom PyTorch MLPs and rigorous SHAP-based model interpretability.
+          </p>
+          <div class="tech-stack">
+            <span>PyTorch</span>
+            <span>XGBoost</span>
+            <span>SHAP</span>
+            <span>Nested CV</span>
+            <span>MLP</span>
+          </div>
+          <div class="card-actions">
+            <a href="https://github.com/EoinHoustoun/Infrared_Thermography" target="_blank" rel="noopener" class="card-btn">View on GitHub →</a>
+          </div>
+        </div>
+
+        <!-- 3. Pediatric Appendicitis -->
+        <div class="project-card fade-in">
+          <div class="card-header">
+            <span class="category-badge badge-clinical">Clinical AI</span>
+            <span class="live-badge">
+              <span class="live-dot"></span> Live Demo
+            </span>
+          </div>
+          <h3>Pediatric Appendicitis Prediction</h3>
+          <p>
+            Clinical decision-support tool classifying appendicitis diagnosis and severity from patient data.
+            Deployed as a live, interactive Gradio web application for real-time clinical use.
+          </p>
+          <div class="tech-stack">
+            <span>XGBoost</span>
+            <span>MLP</span>
+            <span>SHAP</span>
+            <span>Gradio</span>
+            <span>Python</span>
+          </div>
+          <div class="card-actions">
+            <a href="https://github.com/EoinHoustoun/Pediatric_Appendicitis" target="_blank" rel="noopener" class="card-btn">View on GitHub →</a>
+          </div>
+        </div>
+
+        <!-- 4. Neural Style Transfer -->
+        <div class="project-card fade-in">
+          <div class="card-header">
+            <span class="category-badge badge-cv">Computer Vision</span>
+          </div>
+          <h3>Neural Style Transfer</h3>
+          <p>
+            Transforms celebrity faces into comic book illustrations using deep neural artistic rendering.
+            Combines content and style loss functions for visually striking photorealistic stylisation.
+          </p>
+          <div class="tech-stack">
+            <span>VGG19</span>
+            <span>PyTorch</span>
+            <span>CNN</span>
+            <span>Neural Rendering</span>
+          </div>
+          <div class="card-actions">
+            <a href="https://github.com/EoinHoustoun/Generative_AI" target="_blank" rel="noopener" class="card-btn">View on GitHub →</a>
+          </div>
+        </div>
+
+        <!-- 5. AI Chef Chatbot -->
+        <div class="project-card fade-in">
+          <div class="card-header">
+            <span class="category-badge badge-nlp">NLP</span>
+          </div>
+          <h3>AI Chef Chatbot</h3>
+          <p>
+            Recipe recommendation chatbot with a Tkinter desktop GUI. Uses DistilBERT for semantic
+            similarity and TF-IDF retrieval, enhanced with web scraping for live ingredient-aware suggestions.
+          </p>
+          <div class="tech-stack">
+            <span>DistilBERT</span>
+            <span>TF-IDF</span>
+            <span>NLP</span>
+            <span>Web Scraping</span>
+            <span>Tkinter</span>
+          </div>
+          <div class="card-actions">
+            <a href="https://github.com/EoinHoustoun/AI_Chef" target="_blank" rel="noopener" class="card-btn">View on GitHub →</a>
+          </div>
+        </div>
+
+        <!-- 6. Validation Procedures -->
+        <div class="project-card fade-in">
+          <div class="card-header">
+            <span class="category-badge badge-research">Research</span>
+          </div>
+          <h3>Validation Procedures Exploration</h3>
+          <p>
+            Football player transfer fee prediction as a rigorous case study in validation methodology.
+            Systematically compares cross-validation variants, temporal validation, and bootstrapping.
+          </p>
+          <div class="tech-stack">
+            <span>Regression</span>
+            <span>Cross-Validation</span>
+            <span>Bootstrapping</span>
+            <span>XGBoost</span>
+            <span>R</span>
+          </div>
+          <div class="card-actions">
+            <a href="https://github.com/EoinHoustoun/Final-Year-Project" target="_blank" rel="noopener" class="card-btn">View on GitHub →</a>
+          </div>
+        </div>
+
+      </div>
+
+      <!-- Secondary projects row -->
+      <div class="secondary-projects fade-in">
+        <h3 class="secondary-title">Additional Projects</h3>
+        <div class="secondary-grid">
+          <div class="secondary-card">
+            <span class="category-badge badge-nlp">NLP / RecSys</span>
+            <h4>Amazon Recommendation System</h4>
+            <p>Collaborative and content-based filtering for personalised product recommendations at scale.</p>
+            <a href="https://github.com/EoinHoustoun" target="_blank" rel="noopener" class="secondary-link">GitHub →</a>
+          </div>
+          <div class="secondary-card">
+            <span class="category-badge badge-ds">Data Science</span>
+            <h4>Retail Customer Prediction</h4>
+            <p>Customer purchase propensity modelling using classification ensembles for a retail environment.</p>
+            <a href="https://github.com/EoinHoustoun" target="_blank" rel="noopener" class="secondary-link">GitHub →</a>
+          </div>
+          <div class="secondary-card">
+            <span class="category-badge badge-ds">Data Science</span>
+            <h4>Customer Segmentation</h4>
+            <p>Unsupervised clustering to identify distinct customer personas for targeted marketing strategy.</p>
+            <a href="https://github.com/EoinHoustoun" target="_blank" rel="noopener" class="secondary-link">GitHub →</a>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ===== PUBLICATION SECTION ===== -->
+  <section id="publication">
+    <div class="container">
+      <div class="section-header fade-in">
+        <span class="section-label">Research</span>
+        <h2>Published Work</h2>
+      </div>
+
+      <div class="publication-card fade-in">
+        <div class="pub-badge-row">
+          <span class="pub-badge pub-peer">Peer Reviewed</span>
+          <span class="pub-badge pub-springer">Springer</span>
+          <span class="pub-badge pub-aiai">AIAI 2025</span>
+        </div>
+
+        <div class="pub-body">
+          <div class="pub-icon" aria-hidden="true">
+            <svg width="48" height="48" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5">
+              <path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"/>
+              <polyline points="14 2 14 8 20 8"/>
+              <line x1="16" y1="13" x2="8" y2="13"/>
+              <line x1="16" y1="17" x2="8" y2="17"/>
+              <polyline points="10 9 9 9 8 9"/>
+            </svg>
+          </div>
+
+          <div class="pub-content">
+            <h3 class="pub-title">
+              Classifying Cognitive Stages in Alzheimer's Disease Using Machine Learning on the Bio-Hermes Dataset
+            </h3>
+
+            <div class="pub-meta">
+              <div class="pub-authors">Eoin Houstoun et al.</div>
+              <div class="pub-venue">
+                <em>Artificial Intelligence Applications and Innovations</em> &mdash; AIAI 2025<br>
+                IFIP Advances in Information and Communication Technology &middot; Springer &middot; 2025
+              </div>
+            </div>
+
+            <p class="pub-abstract">
+              This paper presents a machine learning approach to classifying individuals into cognitive stages of
+              Alzheimer's disease using the Bio-Hermes dataset. Employing XGBoost, Random Forest, and Monte Carlo
+              cross-validation with rigorous feature selection, the work demonstrates high-accuracy staging from
+              digital biomarker data — advancing clinical AI decision-support for neurodegenerative conditions.
+            </p>
+
+            <div class="pub-actions">
+              <a href="https://link.springer.com/chapter/10.1007/978-3-031-96235-6_5" target="_blank" rel="noopener" class="btn btn-primary">
+                Read on Springer →
+              </a>
+              <a href="https://ifipaiai.org/2025/" target="_blank" rel="noopener" class="btn btn-secondary">
+                AIAI Conference
+              </a>
+              <a href="https://github.com/EoinHoustoun/Alzheimers_Biohermes" target="_blank" rel="noopener" class="btn btn-ghost">
+                View Code
+              </a>
+            </div>
+
+            <div class="pub-citation">
+              <span class="citation-label">Cite as</span>
+              <blockquote class="citation-text">
+                Houstoun, E. et al. (2025). Classifying Cognitive Stages in Alzheimer's Disease Using Machine
+                Learning on the Bio-Hermes Dataset. In: <em>Artificial Intelligence Applications and Innovations</em>.
+                AIAI 2025. IFIP Advances in Information and Communication Technology. Springer, Cham.
+                https://doi.org/10.1007/978-3-031-96235-6_5
+              </blockquote>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ===== CONTACT SECTION ===== -->
+  <section id="contact">
+    <div class="container">
+      <div class="section-header fade-in">
+        <span class="section-label">Contact</span>
+        <h2>Get In Touch</h2>
+      </div>
+
+      <div class="contact-content fade-in">
+        <p class="contact-sub">
+          Open to data science, ML engineering, and AI research roles.<br>
+          Let's build something together.
+        </p>
+
+        <div class="contact-cards">
+          <!-- GitHub -->
+          <a href="https://github.com/EoinHoustoun" target="_blank" rel="noopener" class="contact-card">
+            <div class="contact-icon">
+              <svg width="28" height="28" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true">
+                <path d="M12 0C5.374 0 0 5.373 0 12c0 5.302 3.438 9.8 8.207 11.387.599.111.793-.261.793-.577v-2.234c-3.338.726-4.033-1.416-4.033-1.416-.546-1.387-1.333-1.756-1.333-1.756-1.089-.745.083-.729.083-.729 1.205.084 1.839 1.237 1.839 1.237 1.07 1.834 2.807 1.304 3.492.997.107-.775.418-1.305.762-1.604-2.665-.305-5.467-1.334-5.467-5.931 0-1.311.469-2.381 1.236-3.221-.124-.303-.535-1.524.117-3.176 0 0 1.008-.322 3.301 1.23A11.509 11.509 0 0 1 12 5.803c1.02.005 2.047.138 3.006.404 2.291-1.552 3.297-1.23 3.297-1.23.653 1.653.242 2.874.118 3.176.77.84 1.235 1.911 1.235 3.221 0 4.609-2.807 5.624-5.479 5.921.43.372.823 1.102.823 2.222v3.293c0 .319.192.694.801.576C20.566 21.797 24 17.3 24 12c0-6.627-5.373-12-12-12z"/>
+              </svg>
+            </div>
+            <div class="contact-info">
+              <div class="contact-label">GitHub</div>
+              <div class="contact-value">EoinHoustoun</div>
+            </div>
+            <div class="contact-arrow">→</div>
+          </a>
+
+          <!-- LinkedIn -->
+          <a href="https://linkedin.com/in/eoin-houstoun" target="_blank" rel="noopener" class="contact-card">
+            <div class="contact-icon">
+              <svg width="28" height="28" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true">
+                <path d="M20.447 20.452h-3.554v-5.569c0-1.328-.027-3.037-1.852-3.037-1.853 0-2.136 1.445-2.136 2.939v5.667H9.351V9h3.414v1.561h.046c.477-.9 1.637-1.85 3.37-1.85 3.601 0 4.267 2.37 4.267 5.455v6.286zM5.337 7.433a2.062 2.062 0 0 1-2.063-2.065 2.064 2.064 0 1 1 2.063 2.065zm1.782 13.019H3.555V9h3.564v11.452zM22.225 0H1.771C.792 0 0 .774 0 1.729v20.542C0 23.227.792 24 1.771 24h20.451C23.2 24 24 23.227 24 22.271V1.729C24 .774 23.2 0 22.222 0h.003z"/>
+              </svg>
+            </div>
+            <div class="contact-info">
+              <div class="contact-label">LinkedIn</div>
+              <div class="contact-value">Connect with me</div>
+            </div>
+            <div class="contact-arrow">→</div>
+          </a>
+
+          <!-- MIT ePortfolio -->
+          <a href="https://www.mygreatlearning.com/eportfolio/eoin-houstoun" target="_blank" rel="noopener" class="contact-card">
+            <div class="contact-icon">
+              <svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true">
+                <path d="M22 11.08V12a10 10 0 1 1-5.93-9.14"/><polyline points="22 4 12 14.01 9 11.01"/>
+              </svg>
+            </div>
+            <div class="contact-info">
+              <div class="contact-label">ePortfolio</div>
+              <div class="contact-value">MIT Great Learning</div>
+            </div>
+            <div class="contact-arrow">→</div>
+          </a>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ===== FOOTER ===== -->
+  <footer>
+    <div class="container">
+      <div class="footer-content">
+        <div class="footer-name">Eoin Houstoun</div>
+        <div class="footer-sub">Data Scientist &amp; AI Engineer &middot; Published Researcher, AIAI 2025</div>
+        <div class="footer-links">
+          <a href="https://github.com/EoinHoustoun" target="_blank" rel="noopener">GitHub</a>
+          <span class="footer-sep">·</span>
+          <a href="https://link.springer.com/chapter/10.1007/978-3-031-96235-6_5" target="_blank" rel="noopener">Springer Paper</a>
+          <span class="footer-sep">·</span>
+          <a href="https://www.mygreatlearning.com/eportfolio/eoin-houstoun" target="_blank" rel="noopener">MIT ePortfolio</a>
+        </div>
+        <div class="footer-copy">&copy; 2025 Eoin Houstoun</div>
+      </div>
+    </div>
+  </footer>
+
+  <script src="script.js"></script>
+</body>
+</html>
