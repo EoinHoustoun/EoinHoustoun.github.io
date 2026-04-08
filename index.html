@@ -135,7 +135,7 @@
         <!-- Stats panel -->
         <div class="about-stats fade-in">
           <div class="stat-card">
-            <div class="stat-number">9+</div>
+            <div class="stat-number">13+</div>
             <div class="stat-label">ML Projects</div>
           </div>
           <div class="stat-card">
@@ -489,7 +489,113 @@
           </div>
         </div>
 
-        <!-- 4. Neural Style Transfer -->
+        <!-- 4. Premier League Match Predictor -->
+        <div class="project-card fade-in">
+          <div class="card-img">
+            <img src="docs/assets/fpred.png" alt="Premier League Match Predictor" loading="lazy">
+          </div>
+          <div class="card-header">
+            <span class="category-badge badge-sports">Sports Analytics</span>
+          </div>
+          <h3>Premier League Match Predictor</h3>
+          <p>
+            Forecasts EPL match outcomes using a blended ensemble of Dixon-Coles (MLE with exponential
+            time decay, 65% weight) and XGBoost (35% weight) trained on 1,069 matches. Validated
+            via Brier score and log-loss backtesting against a random baseline.
+          </p>
+          <div class="tech-stack">
+            <span>Dixon-Coles MLE</span>
+            <span>XGBoost</span>
+            <span>Poisson Regression</span>
+            <span>Brier Score</span>
+            <span>Time Decay</span>
+            <span>Streamlit</span>
+          </div>
+          <div class="card-actions">
+            <a href="#" class="card-btn card-btn-soon" aria-disabled="true">GitHub Coming Soon</a>
+          </div>
+        </div>
+
+        <!-- 5. Fantasy Football AI Planner -->
+        <div class="project-card fade-in">
+          <div class="card-img">
+            <img src="docs/assets/fpl.png" alt="Fantasy Football AI Planner" loading="lazy">
+          </div>
+          <div class="card-header">
+            <span class="category-badge badge-sports">Sports Analytics</span>
+          </div>
+          <h3>Fantasy Football AI Planner</h3>
+          <p>
+            16-page FPL analytics platform combining Dixon-Coles team strength modelling, exponentially
+            weighted player form, and XGBoost point predictions to drive data-driven transfer, captain,
+            and chip decisions.
+          </p>
+          <div class="tech-stack">
+            <span>Dixon-Coles</span>
+            <span>XGBoost</span>
+            <span>Poisson Regression</span>
+            <span>EWM Form</span>
+            <span>Streamlit</span>
+            <span>Plotly</span>
+          </div>
+          <div class="card-actions">
+            <a href="#" class="card-btn card-btn-soon" aria-disabled="true">GitHub Coming Soon</a>
+          </div>
+        </div>
+
+        <!-- 6. Football Transfer Intelligence Agent -->
+        <div class="project-card fade-in">
+          <div class="card-img">
+            <img src="docs/assets/fscout.png" alt="Football Transfer Intelligence Agent" loading="lazy">
+          </div>
+          <div class="card-header">
+            <span class="category-badge badge-sports">Sports Analytics</span>
+          </div>
+          <h3>Football Transfer Intelligence Agent</h3>
+          <p>
+            Predicts EPL transfer adaptation scores using a stacked ensemble of XGBoost and LightGBM
+            base learners with a Ridge meta-learner. Features Optuna hyperparameter optimisation,
+            xG/xA feature engineering, and a Flask API for real-time predictions.
+          </p>
+          <div class="tech-stack">
+            <span>XGBoost</span>
+            <span>LightGBM</span>
+            <span>Stacking Ensemble</span>
+            <span>Optuna</span>
+            <span>xG / xA Features</span>
+            <span>Flask API</span>
+          </div>
+          <div class="card-actions">
+            <a href="#" class="card-btn card-btn-soon" aria-disabled="true">GitHub Coming Soon</a>
+          </div>
+        </div>
+
+        <!-- 7. Validation Procedures -->
+        <div class="project-card fade-in">
+          <div class="card-img">
+            <img src="docs/assets/int_val.png" alt="Validation Procedures Exploration" loading="lazy">
+          </div>
+          <div class="card-header">
+            <span class="category-badge badge-sports">Sports Analytics</span>
+          </div>
+          <h3>Validation Procedures Exploration</h3>
+          <p>
+            Football player transfer fee prediction as a rigorous case study in validation methodology.
+            Systematically compares cross-validation variants, temporal validation, and bootstrapping.
+          </p>
+          <div class="tech-stack">
+            <span>Regression</span>
+            <span>Cross-Validation</span>
+            <span>Bootstrapping</span>
+            <span>XGBoost</span>
+            <span>R</span>
+          </div>
+          <div class="card-actions">
+            <a href="https://github.com/EoinHoustoun/Final-Year-Project" target="_blank" rel="noopener" class="card-btn">View on GitHub →</a>
+          </div>
+        </div>
+
+        <!-- 8. Neural Style Transfer -->
         <div class="project-card fade-in">
           <div class="card-img">
             <img src="https://github.com/EoinHoustoun/Eoin_Houstoun/blob/master/style_transfer6.gif?raw=true" alt="Neural Style Transfer Demo" loading="lazy">
@@ -513,7 +619,7 @@
           </div>
         </div>
 
-        <!-- 5. AI Chef Chatbot -->
+        <!-- 9. AI Chef Chatbot -->
         <div class="project-card fade-in">
           <div class="card-img">
             <img src="docs/assets/ai_chef.png" alt="AI Chef Chatbot" loading="lazy">
@@ -538,115 +644,7 @@
           </div>
         </div>
 
-        <!-- 6. Validation Procedures -->
-        <div class="project-card fade-in">
-          <div class="card-img">
-            <img src="docs/assets/int_val.png" alt="Validation Procedures Exploration" loading="lazy">
-          </div>
-          <div class="card-header">
-            <span class="category-badge badge-research">Research</span>
-          </div>
-          <h3>Validation Procedures Exploration</h3>
-          <p>
-            Football player transfer fee prediction as a rigorous case study in validation methodology.
-            Systematically compares cross-validation variants, temporal validation, and bootstrapping.
-          </p>
-          <div class="tech-stack">
-            <span>Regression</span>
-            <span>Cross-Validation</span>
-            <span>Bootstrapping</span>
-            <span>XGBoost</span>
-            <span>R</span>
-          </div>
-          <div class="card-actions">
-            <a href="https://github.com/EoinHoustoun/Final-Year-Project" target="_blank" rel="noopener" class="card-btn">View on GitHub →</a>
-          </div>
-        </div>
-
-      </div>
-
-        <!-- 7. Premier League Match Predictor -->
-        <div class="project-card fade-in">
-          <div class="card-img">
-            <img src="docs/assets/fpred.png" alt="Premier League Match Predictor" loading="lazy">
-          </div>
-          <div class="card-header">
-            <span class="category-badge badge-ds">Sports Analytics</span>
-          </div>
-          <h3>Premier League Match Predictor</h3>
-          <p>
-            Forecasts EPL match outcomes using a blended ensemble of Dixon-Coles (MLE with exponential
-            time decay, 65% weight) and XGBoost (35% weight) trained on 1,069 matches. Validated
-            via Brier score and log-loss backtesting against a random baseline.
-          </p>
-          <div class="tech-stack">
-            <span>Dixon-Coles MLE</span>
-            <span>XGBoost</span>
-            <span>Poisson Regression</span>
-            <span>Brier Score</span>
-            <span>Time Decay</span>
-            <span>Streamlit</span>
-          </div>
-          <div class="card-actions">
-            <a href="#" class="card-btn">GitHub Coming Soon</a>
-          </div>
-        </div>
-
-        <!-- 8. Fantasy Football AI Planner -->
-        <div class="project-card fade-in">
-          <div class="card-img">
-            <img src="docs/assets/fpl.png" alt="Fantasy Football AI Planner" loading="lazy">
-          </div>
-          <div class="card-header">
-            <span class="category-badge badge-ds">Sports Analytics</span>
-          </div>
-          <h3>Fantasy Football AI Planner</h3>
-          <p>
-            16-page FPL analytics platform combining Dixon-Coles team strength modelling, exponentially
-            weighted player form, and XGBoost point predictions to drive data-driven transfer, captain,
-            and chip decisions.
-          </p>
-          <div class="tech-stack">
-            <span>Dixon-Coles</span>
-            <span>XGBoost</span>
-            <span>Poisson Regression</span>
-            <span>EWM Form</span>
-            <span>Streamlit</span>
-            <span>Plotly</span>
-          </div>
-          <div class="card-actions">
-            <a href="#" class="card-btn">GitHub Coming Soon</a>
-          </div>
-        </div>
-
-        <!-- 8. Football Transfer Intelligence Agent -->
-        <div class="project-card fade-in">
-          <div class="card-img">
-            <img src="docs/assets/fscout.png" alt="Football Transfer Intelligence Agent" loading="lazy">
-          </div>
-          <div class="card-header">
-            <span class="category-badge badge-ds">Sports Analytics</span>
-          </div>
-          <h3>Football Transfer Intelligence Agent</h3>
-          <p>
-            Predicts EPL transfer adaptation scores using a stacked ensemble of XGBoost and LightGBM
-            base learners with a Ridge meta-learner. Features Optuna hyperparameter optimisation,
-            xG/xA feature engineering, and a Flask API for real-time predictions.
-          </p>
-          <div class="tech-stack">
-            <span>XGBoost</span>
-            <span>LightGBM</span>
-            <span>Stacking Ensemble</span>
-            <span>Optuna</span>
-            <span>xG / xA Features</span>
-            <span>Flask API</span>
-          </div>
-          <div class="card-actions">
-            <a href="#" class="card-btn">GitHub Coming Soon</a>
-          </div>
-        </div>
-
-        <!-- 9. YouTube Sentiment Analyser -->
+        <!-- 10. YouTube Sentiment Analyser -->
         <div class="project-card fade-in">
           <div class="card-img">
             <img src="docs/assets/yt.png" alt="YouTube Sentiment Analyser" loading="lazy">
@@ -669,9 +667,11 @@
             <span>Flask</span>
           </div>
           <div class="card-actions">
-            <a href="#" class="card-btn">GitHub Coming Soon</a>
+            <a href="#" class="card-btn card-btn-soon" aria-disabled="true">GitHub Coming Soon</a>
           </div>
         </div>
+
+      </div>
 
       <!-- Secondary projects row -->
       <div class="secondary-projects fade-in">
