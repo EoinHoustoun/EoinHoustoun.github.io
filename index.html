@@ -499,20 +499,23 @@
           </div>
           <h3>Premier League Match Predictor</h3>
           <p>
-            Forecasts EPL match outcomes using a blended ensemble of Dixon-Coles (MLE with exponential
-            time decay, 65% weight) and XGBoost (35% weight) trained on 1,069 matches. Validated
-            via Brier score and log-loss backtesting against a random baseline.
+            Full-stack Streamlit app predicting Premier League match outcomes using a five-model ensemble:
+            Dixon-Coles MLE (xG-based likelihood with tau correction), XGBoost (3-class and binary draw),
+            Poisson baseline, and a draw specialist that boosted draw-bet ROI from 4% to 13%.
+            Includes a mock betting portfolio with Kelly criterion sizing, live odds integration,
+            and auto-bet — backtested to £10k → £84k over 52 weeks (213 bets, 36.6% win rate).
           </p>
           <div class="tech-stack">
             <span>Dixon-Coles MLE</span>
             <span>XGBoost</span>
-            <span>Poisson Regression</span>
-            <span>Brier Score</span>
-            <span>Time Decay</span>
+            <span>Draw Specialist</span>
+            <span>Kelly Criterion</span>
+            <span>Monte Carlo</span>
             <span>Streamlit</span>
+            <span>Plotly</span>
           </div>
           <div class="card-actions">
-            <a href="#" class="card-btn card-btn-soon" aria-disabled="true">GitHub Coming Soon</a>
+            <a href="https://github.com/EoinHoustoun/Football_Match_Predictor" target="_blank" rel="noopener" class="card-btn">View on GitHub →</a>
           </div>
         </div>
 
