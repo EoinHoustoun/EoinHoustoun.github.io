@@ -212,9 +212,19 @@
 
     const dots = dotsContainer ? dotsContainer.querySelectorAll('.dot') : [];
 
+    const isSlideType = container.classList.contains('slideshow--slide');
+
     function goTo(index) {
-      slides[current].classList.remove('active');
-      if (dots[current]) dots[current].classList.remove('active');
+      const prev = current;
+      slides[prev].classList.remove('active');
+      if (dots[prev]) dots[prev].classList.remove('active');
+
+      // For slide-from-right: outgoing slide exits left
+      if (isSlideType) {
+        slides[prev].classList.add('exit-left');
+        setTimeout(() => slides[prev].classList.remove('exit-left'), 650);
+      }
+
       current = index;
       slides[current].classList.add('active');
       if (dots[current]) dots[current].classList.add('active');
