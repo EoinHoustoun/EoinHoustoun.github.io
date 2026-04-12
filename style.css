@@ -1159,6 +1159,50 @@ section:nth-child(even) {
   height: 220px;
 }
 
+/* ── Slideshow: Crossfade ── */
+.slideshow {
+  background: #0e0e0e;
+}
+
+.slideshow .slide {
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  object-fit: contain;
+  opacity: 0;
+  transition: opacity 0.8s ease-in-out;
+}
+
+.slideshow .slide.active {
+  opacity: 1;
+  position: relative;
+}
+
+.slide-dots {
+  position: absolute;
+  bottom: 8px;
+  left: 50%;
+  transform: translateX(-50%);
+  display: flex;
+  gap: 6px;
+  z-index: 5;
+}
+
+.slide-dots .dot {
+  width: 7px;
+  height: 7px;
+  border-radius: 50%;
+  background: rgba(255, 255, 255, 0.3);
+  cursor: pointer;
+  transition: background 0.3s, transform 0.3s;
+}
+
+.slide-dots .dot.active {
+  background: #00FF87;
+  transform: scale(1.3);
+}
+
 /* Card action buttons */
 .card-actions {
   display: flex;

@@ -190,6 +190,45 @@
 })();
 
 
+/* ===== IMAGE SLIDESHOWS ===== */
+(function initSlideshows() {
+  document.querySelectorAll('.slideshow').forEach((container) => {
+    const slides = container.querySelectorAll('.slide');
+    const dotsContainer = container.querySelector('.slide-dots');
+    if (slides.length < 2) return;
+
+    const interval = parseInt(container.dataset.interval) || 3500;
+    let current = 0;
+
+    // Build dot indicators
+    if (dotsContainer) {
+      slides.forEach((_, i) => {
+        const dot = document.createElement('span');
+        dot.className = 'dot' + (i === 0 ? ' active' : '');
+        dot.addEventListener('click', () => goTo(i));
+        dotsContainer.appendChild(dot);
+      });
+    }
+
+    const dots = dotsContainer ? dotsContainer.querySelectorAll('.dot') : [];
+
+    function goTo(index) {
+      slides[current].classList.remove('active');
+      if (dots[current]) dots[current].classList.remove('active');
+      current = index;
+      slides[current].classList.add('active');
+      if (dots[current]) dots[current].classList.add('active');
+    }
+
+    function next() {
+      goTo((current + 1) % slides.length);
+    }
+
+    setInterval(next, interval);
+  });
+})();
+
+
 /* ===== ACTIVE NAV LINK HIGHLIGHTING ===== */
 (function initActiveNavLinks() {
   const sections = document.querySelectorAll('section[id]');

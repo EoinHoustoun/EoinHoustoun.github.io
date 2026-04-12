@@ -87,7 +87,7 @@
     <div class="container">
       <div class="section-header fade-in">
         <span class="section-label">About</span>
-        <h2>Get to Know Me</h2>
+        <h2>Professional Summary</h2>
       </div>
 
       <div class="about-grid">
@@ -404,7 +404,16 @@
         <div class="project-card featured fade-in">
           <div class="featured-ribbon">Lead Project</div>
           <div class="card-img" style="display:flex;gap:4px;">
-            <img src="docs/assets/Research_Image.png" alt="Alzheimer's Disease Classification" loading="lazy" style="width:50%;object-fit:cover;">
+            <div class="slideshow slideshow--crossfade" data-interval="3500" style="width:50%;position:relative;overflow:hidden;">
+              <img src="docs/assets/Research_Image.png" alt="Research Overview" class="slide active" loading="lazy">
+              <img src="docs/assets/alz_roc.png" alt="ROC Curve (OvO)" class="slide" loading="lazy">
+              <img src="docs/assets/alz_confusion.png" alt="Mean Confusion Matrix" class="slide" loading="lazy">
+              <img src="docs/assets/alz_volcano.png" alt="MCI to AD Volcano Plot" class="slide" loading="lazy">
+              <img src="docs/assets/alz_boxplots.png" alt="Biomarker Distributions" class="slide" loading="lazy">
+              <img src="docs/assets/alz_prec_rec.png" alt="Precision-Recall-F1 Curves" class="slide" loading="lazy">
+              <img src="docs/assets/alz_calib.png" alt="Calibration Curves" class="slide" loading="lazy">
+              <div class="slide-dots"></div>
+            </div>
             <img src="docs/assets/conference.jpg" alt="AIAI 2025 Conference Presentation" loading="lazy" style="width:50%;object-fit:cover;">
           </div>
           <div class="card-header">
@@ -524,7 +533,7 @@
           </div>
           <h3>Fantasy Football AI Planner</h3>
           <p>
-            16-page FPL analytics platform combining Dixon-Coles team strength modelling, exponentially
+            FPL analytics platform combining Dixon-Coles team strength modelling, exponentially
             weighted player form, and XGBoost point predictions to drive data-driven transfer, captain,
             and chip decisions.
           </p>
