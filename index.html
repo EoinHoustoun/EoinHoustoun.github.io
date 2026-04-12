@@ -414,7 +414,7 @@
               <img src="docs/assets/alz_calib.png" alt="Calibration Curves" class="slide" loading="lazy">
               <div class="slide-dots"></div>
             </div>
-            <img src="docs/assets/conference.jpg" alt="AIAI 2025 Conference Presentation" loading="lazy" style="width:50%;object-fit:cover;">
+            <img src="docs/assets/conference.jpg" alt="AIAI 2025 Conference Presentation" loading="lazy" style="width:50%;object-fit:contain;">
           </div>
           <div class="card-header">
             <span class="category-badge badge-research">Research</span>
@@ -526,7 +526,12 @@
         <!-- 5. Fantasy Football AI Planner -->
         <div class="project-card fade-in">
           <div class="card-img">
-            <img src="docs/assets/fpl.png" alt="Fantasy Football AI Planner" loading="lazy">
+            <div class="slideshow slideshow--crossfade" data-interval="4000" style="width:100%;height:100%;position:relative;overflow:hidden;">
+              <img src="docs/assets/fpl.png" alt="Fantasy Football AI Planner" class="slide active" loading="lazy">
+              <img src="docs/assets/fpl_points_history.png" alt="FPL Points History" class="slide" loading="lazy">
+              <img src="docs/assets/fpl_gw_history.png" alt="FPL Gameweek History" class="slide" loading="lazy">
+              <div class="slide-dots"></div>
+            </div>
           </div>
           <div class="card-header">
             <span class="category-badge badge-sports">Sports Analytics</span>

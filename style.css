@@ -1156,7 +1156,11 @@ section:nth-child(even) {
 }
 
 .project-card.featured .card-img {
-  height: 220px;
+  height: 300px;
+}
+
+.project-card.featured .card-img img {
+  object-fit: contain;
 }
 
 /* ── Slideshow: Crossfade ── */
