@@ -234,7 +234,10 @@
       goTo((current + 1) % slides.length);
     }
 
-    setInterval(next, interval);
+    // Auto-advance, but pause while the visitor is hovering the slideshow
+    let timer = setInterval(next, interval);
+    container.addEventListener('mouseenter', () => clearInterval(timer));
+    container.addEventListener('mouseleave', () => { timer = setInterval(next, interval); });
   });
 })();
 
@@ -527,260 +530,6 @@
 })();
 
 
-/* ===== K-MEANS LIVE CLUSTERING (skills section) ===== */
-(function initKMeans() {
-  const canvas = document.getElementById('kmeansViz');
-  if (!canvas) return;
-  const ctx = canvas.getContext('2d');
-  const hint = document.getElementById('kmeansHint');
-
-  const COLORS = ['#00d4ff', '#00ff87', '#a78bfa', '#fbbf24', '#f472b6'];
-  const GREY = 'rgba(255, 255, 255, 0.35)';
-  const K = 5;
-
-  let W, H;
-  function resize() {
-    const dpr = window.devicePixelRatio || 1;
-    const r = canvas.getBoundingClientRect();
-    W = r.width; H = r.height;
-    canvas.width = W * dpr;
-    canvas.height = H * dpr;
-    ctx.setTransform(dpr, 0, 0, dpr, 0, 0);
-  }
-  resize();
-  window.addEventListener('resize', resize);
-
-  // Seeded RNG: same dataset every visit
-  let seed = 7;
-  function rand() { seed = (seed * 16807) % 2147483647; return (seed - 1) / 2147483646; }
-  function gauss() { return (rand() + rand() + rand() - 1.5) / 1.5; }
-
-  // Five latent blobs: varied size, spread, and one stretched diagonal cluster.
-  // Overlapping enough that the structure is NOT obvious until k-means finds it.
-  const BLOBS = [
-    { x: 0.24, y: 0.30, sx: 0.085, sy: 0.085, rot: 0,    n: 42 },
-    { x: 0.62, y: 0.22, sx: 0.16,  sy: 0.045, rot: 0.5,  n: 46 }, // stretched diagonal
-    { x: 0.78, y: 0.62, sx: 0.07,  sy: 0.11,  rot: 0,    n: 38 },
-    { x: 0.38, y: 0.68, sx: 0.13,  sy: 0.06,  rot: -0.4, n: 40 }, // wide and flat
-    { x: 0.52, y: 0.45, sx: 0.05,  sy: 0.05,  rot: 0,    n: 24 }, // tight core in the middle of everything
-  ];
-  const pts = [];
-  BLOBS.forEach((b) => {
-    const cos = Math.cos(b.rot), sin = Math.sin(b.rot);
-    for (let i = 0; i < b.n; i++) {
-      const u = gauss() * b.sx, v = gauss() * b.sy;
-      pts.push({
-        x: Math.min(0.97, Math.max(0.03, b.x + cos * u - sin * v)),
-        y: Math.min(0.95, Math.max(0.05, b.y + sin * u + cos * v)),
-        cl: -1,
-      });
-    }
-  });
-
-  // Centroids animate between Lloyd iterations
-  let centroids = [];
-  let running = false;
-  let iterTimer = null;
-
-  function resetState() {
-    running = false;
-    clearTimeout(iterTimer);
-    pts.forEach((p) => { p.cl = -1; });
-    centroids = [];
-    if (hint) hint.textContent = 'hover to cluster';
-  }
-
-  function startKMeans() {
-    if (running) return;
-    running = true;
-
-    // k-means++ initialisation: spread the starting centroids apart
-    const first = pts[Math.floor(Math.random() * pts.length)];
-    centroids = [{ x: first.x, y: first.y, tx: first.x, ty: first.y }];
-    while (centroids.length < K) {
-      let bestP = null, bestD = -1;
-      // Sample candidates weighted toward points far from existing centroids
-      for (let t = 0; t < 24; t++) {
-        const p = pts[Math.floor(Math.random() * pts.length)];
-        let d = Infinity;
-        centroids.forEach((c) => {
-          d = Math.min(d, (p.x - c.x) ** 2 + (p.y - c.y) ** 2);
-        });
-        if (d > bestD) { bestD = d; bestP = p; }
-      }
-      centroids.push({ x: bestP.x, y: bestP.y, tx: bestP.x, ty: bestP.y });
-    }
-
-    let iter = 0;
-    let prevInertia = Infinity;
-    function step() {
-      // Assign + accumulate inertia (within-cluster sum of squares)
-      let inertia = 0;
-      pts.forEach((p) => {
-        let best = 0, bd = Infinity;
-        centroids.forEach((c, i) => {
-          const d = (p.x - c.tx) ** 2 + (p.y - c.ty) ** 2;
-          if (d < bd) { bd = d; best = i; }
-        });
-        p.cl = best;
-        inertia += bd;
-      });
-      // Update targets (centroids glide there in the draw loop)
-      centroids.forEach((c, i) => {
-        const mine = pts.filter((p) => p.cl === i);
-        if (mine.length) {
-          c.tx = mine.reduce((s, p) => s + p.x, 0) / mine.length;
-          c.ty = mine.reduce((s, p) => s + p.y, 0) / mine.length;
-        }
-      });
-      iter++;
-      if (hint) hint.textContent = 'iter ' + iter + ' · inertia ' + (inertia * 100).toFixed(2);
-
-      // Converge when inertia stops improving (or hard cap)
-      const improved = prevInertia - inertia > 5e-6;
-      prevInertia = inertia;
-      if (iter < 16 && (improved || iter < 6)) {
-        iterTimer = setTimeout(step, 300);
-      } else {
-        if (hint) hint.textContent = 'converged ✓ · k=' + K + ' · ' + iter + ' iters';
-      }
-    }
-    step();
-  }
-
-  // Hover to cluster, leave to reset
-  canvas.addEventListener('mouseenter', () => { resetState(); startKMeans(); });
-  canvas.addEventListener('mouseleave', () => { resetState(); if (hint) hint.textContent = 'hover to cluster'; });
-  canvas.addEventListener('touchstart', () => { resetState(); startKMeans(); }, { passive: true });
-
-  // Auto-demo loop when idle and visible
-  let visible = false;
-  new IntersectionObserver((entries) => {
-    visible = entries[0].isIntersecting;
-  }, { threshold: 0.15 }).observe(canvas);
-
-  setInterval(() => {
-    if (!visible || running) return;
-    startKMeans();
-    setTimeout(() => { if (!canvas.matches(':hover')) resetState(); }, 6500);
-  }, 10000);
-
-  const X = (u) => 14 + (W - 28) * u;
-  const Y = (u) => 12 + (H - 24) * u;
-
-  function draw() {
-    requestAnimationFrame(draw);
-    if (!visible) return;
-    ctx.clearRect(0, 0, W, H);
-
-    // Points
-    pts.forEach((p) => {
-      ctx.beginPath();
-      ctx.arc(X(p.x), Y(p.y), 3, 0, Math.PI * 2);
-      ctx.fillStyle = p.cl === -1 ? GREY : COLORS[p.cl];
-      ctx.fill();
-    });
-
-    // Centroids glide toward their targets
-    centroids.forEach((c, i) => {
-      c.x += (c.tx - c.x) * 0.16;
-      c.y += (c.ty - c.y) * 0.16;
-      ctx.beginPath();
-      ctx.arc(X(c.x), Y(c.y), 7, 0, Math.PI * 2);
-      ctx.strokeStyle = COLORS[i];
-      ctx.lineWidth = 2.5;
-      ctx.shadowColor = COLORS[i];
-      ctx.shadowBlur = 10;
-      ctx.stroke();
-      ctx.shadowBlur = 0;
-      // Cross in the middle
-      ctx.beginPath();
-      ctx.moveTo(X(c.x) - 3, Y(c.y)); ctx.lineTo(X(c.x) + 3, Y(c.y));
-      ctx.moveTo(X(c.x), Y(c.y) - 3); ctx.lineTo(X(c.x), Y(c.y) + 3);
-      ctx.strokeStyle = COLORS[i];
-      ctx.lineWidth = 1.5;
-      ctx.stroke();
-    });
-  }
-  requestAnimationFrame(draw);
-})();
-
-
-/* ===== SIMULATED TRAINING LOG (skills section) ===== */
-(function initTrainingLog() {
-  const el = document.getElementById('trainingLog');
-  if (!el) return;
-
-  const MAX_LINES = 13;
-  let lines = [];
-  let epoch = 0;
-  const TOTAL = 40;
-  let loss, valLoss, bestVal, bestEpoch, plateau;
-
-  function resetRun() {
-    epoch = 0;
-    loss = 1.9 + Math.random() * 0.4;
-    valLoss = loss + 0.05;
-    bestVal = Infinity;
-    bestEpoch = 0;
-    plateau = 0;
-    lines = [
-      '<span class="t-dim">$</span> <span class="t-accent">python</span> train.py --model xgb_ensemble --folds 5',
-      '<span class="t-dim">Loading 41,732 samples · 86 features · device: cpu</span>',
-      '',
-    ];
-  }
-
-  function bar(p) {
-    const full = Math.round(p * 10);
-    return '<span class="t-accent">' + '▓'.repeat(full) + '</span><span class="t-dim">' + '░'.repeat(10 - full) + '</span>';
-  }
-
-  function render() {
-    el.innerHTML = lines.slice(-MAX_LINES).join('\n');
-  }
-
-  function tick() {
-    epoch++;
-    const decay = Math.exp(-epoch / 11);
-    loss = 0.21 + (loss - 0.21) * 0.88 + (Math.random() - 0.5) * 0.012;
-    valLoss = loss + 0.04 + Math.random() * 0.05;
-    if (valLoss < bestVal - 0.002) { bestVal = valLoss; bestEpoch = epoch; plateau = 0; } else { plateau++; }
-
-    const e = String(epoch).padStart(2, '0');
-    lines.push(
-      'epoch ' + e + '/' + TOTAL + '  ' + bar(epoch / TOTAL) +
-      '  loss <span class="t-accent">' + loss.toFixed(4) + '</span>' +
-      '  val <span class="t-green">' + valLoss.toFixed(4) + '</span>'
-    );
-
-    if (plateau >= 6 || epoch >= TOTAL) {
-      lines.push('');
-      lines.push('<span class="t-dim">Early stopping: val loss plateaued</span>');
-      lines.push('Best epoch <span class="t-green">' + bestEpoch + '</span> · val loss <span class="t-green">' + bestVal.toFixed(4) + '</span>');
-      lines.push('<span class="t-green">✓</span> model saved → <span class="t-accent">model_best.pt</span>');
-      render();
-      setTimeout(() => { resetRun(); render(); setTimeout(tick, 700); }, 4200);
-      return;
-    }
-    render();
-    setTimeout(tick, 380 + Math.random() * 180);
-  }
-
-  // Start when scrolled into view, once
-  let started = false;
-  new IntersectionObserver((entries, obs) => {
-    if (entries[0].isIntersecting && !started) {
-      started = true;
-      resetRun();
-      render();
-      setTimeout(tick, 600);
-      obs.disconnect();
-    }
-  }, { threshold: 0.2 }).observe(el);
-})();
-
-
 /* ===== ACTIVE NAV LINK HIGHLIGHTING ===== */
 (function initActiveNavLinks() {
   const sections = document.querySelectorAll('section[id]');
@@ -805,4 +554,68 @@
   );
 
   sections.forEach((section) => observer.observe(section));
+})();
+
+
+/* ===== THEME TOGGLE (light / dark) ===== */
+(function initThemeToggle() {
+  const KEY = 'eh-theme';
+  const root = document.documentElement;
+  const btn = document.getElementById('themeToggle');
+  const meta = document.querySelector('meta[name="theme-color"]');
+
+  function apply(theme) {
+    root.setAttribute('data-theme', theme);
+    if (meta) meta.setAttribute('content', theme === 'light' ? '#f6f8fb' : '#0a0a0a');
+    if (btn) btn.setAttribute('aria-label',
+      theme === 'light' ? 'Switch to dark mode' : 'Switch to light mode');
+  }
+
+  // Inline <head> script already set the initial attribute; mirror it here.
+  apply(root.getAttribute('data-theme') === 'light' ? 'light' : 'dark');
+
+  if (btn) {
+    btn.addEventListener('click', () => {
+      const next = root.getAttribute('data-theme') === 'light' ? 'dark' : 'light';
+      try { localStorage.setItem(KEY, next); } catch (e) {}
+      apply(next);
+    });
+  }
+})();
+
+
+/* ===== PROJECTS SHOW MORE / LESS ===== */
+(function initProjectsToggle() {
+  const grid = document.getElementById('projectsGrid');
+  const btn = document.getElementById('projectsToggle');
+  const secondary = document.getElementById('secondaryProjects');
+  if (!grid || !btn) return;
+
+  const label = btn.querySelector('.projects-toggle-label');
+  const extraCount = grid.querySelectorAll('.project-card.extra').length +
+    (secondary ? secondary.querySelectorAll('.secondary-card').length : 0);
+
+  function setLabel(expanded) {
+    if (label) label.textContent = expanded ? 'Show fewer projects' : `Show all projects (+${extraCount})`;
+    btn.setAttribute('aria-expanded', String(expanded));
+  }
+  setLabel(false);
+
+  btn.addEventListener('click', () => {
+    const expanding = grid.classList.contains('collapsed');
+    grid.classList.toggle('collapsed', !expanding);
+    if (secondary) secondary.hidden = !expanding;
+    // Make sure revealed fade-in blocks are shown even if the observer already ran
+    if (expanding) {
+      grid.querySelectorAll('.project-card.extra').forEach((c) => c.classList.add('visible'));
+      if (secondary) secondary.classList.add('visible');
+    } else {
+      // Scroll back up to the projects section so "show fewer" isn't disorienting
+      const nav = document.getElementById('navbar');
+      const top = document.getElementById('projects').getBoundingClientRect().top +
+        window.scrollY - (nav ? nav.offsetHeight : 72) - 16;
+      window.scrollTo({ top, behavior: 'smooth' });
+    }
+    setLabel(expanding);
+  });
 })();
