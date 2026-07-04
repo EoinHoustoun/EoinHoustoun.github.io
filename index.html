@@ -770,15 +770,7 @@
 
       </div>
 
-      <!-- Show more / less toggle -->
-      <div class="projects-toggle-wrap">
-        <button class="projects-toggle" id="projectsToggle" type="button" aria-expanded="false" aria-controls="projectsGrid">
-          <span class="projects-toggle-label">Show all projects</span>
-          <svg class="projects-toggle-chevron" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><polyline points="6 9 12 15 18 9"/></svg>
-        </button>
-      </div>
-
-      <!-- Secondary projects row -->
+      <!-- Secondary projects row (revealed by the toggle below) -->
       <div class="secondary-projects fade-in extra-block" id="secondaryProjects" hidden>
         <h3 class="secondary-title">Additional Projects</h3>
         <div class="secondary-grid">
@@ -810,6 +802,14 @@
             <a href="https://github.com/EoinHoustoun" target="_blank" rel="noopener" class="secondary-link">GitHub →</a>
           </div>
         </div>
+      </div>
+
+      <!-- Show more / less toggle: always sits at the bottom of the section -->
+      <div class="projects-toggle-wrap">
+        <button class="projects-toggle" id="projectsToggle" type="button" aria-expanded="false" aria-controls="projectsGrid">
+          <span class="projects-toggle-label">Show all projects</span>
+          <svg class="projects-toggle-chevron" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><polyline points="6 9 12 15 18 9"/></svg>
+        </button>
       </div>
     </div>
   </section>
