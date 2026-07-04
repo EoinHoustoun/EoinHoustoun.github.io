@@ -863,6 +863,15 @@ section:nth-child(even) {
   padding: 0;
 }
 
+/* Logo/badge variant: show the full mark on white, don't crop it */
+.edu-photo--badge {
+  background: #ffffff;
+}
+.edu-photo--badge img {
+  object-fit: contain;
+  padding: 26px;
+}
+
 .edu-meta {
   display: flex;
   align-items: center;
