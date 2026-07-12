@@ -2291,6 +2291,34 @@ footer {
 [data-theme="light"] .timeline-badge { background: rgba(15,26,36,0.05);   border-color: rgba(15,26,36,0.10); }
 
 /* ============================================================
+   GLANCE CHIPS (hero, experience, projects)
+   ============================================================ */
+.chip-row {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px;
+  margin: 16px 0;
+}
+
+.chip {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  padding: 5px 13px;
+  border-radius: 999px;
+  font-size: 0.78rem;
+  font-weight: 600;
+  letter-spacing: 0.01em;
+  color: var(--accent);
+  background: var(--accent-dim);
+  border: 1px solid var(--accent-border);
+  line-height: 1.5;
+}
+
+a.published-badge { cursor: pointer; }
+a.published-badge:hover { opacity: 0.85; }
+
+/* ============================================================
    NEURAL CONSTELLATION BACKGROUND
    ============================================================ */
 #constellation {

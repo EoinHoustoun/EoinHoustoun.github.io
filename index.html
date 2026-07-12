@@ -52,12 +52,9 @@
         <span></span>
       </button>
       <ul class="nav-links" id="navLinks">
-        <li><a href="#about" class="nav-link">About</a></li>
-        <li><a href="#education" class="nav-link">Education</a></li>
+        <li><a href="#snapshot" class="nav-link">About</a></li>
         <li><a href="#experience" class="nav-link">Experience</a></li>
-        <li><a href="#skills" class="nav-link">Skills</a></li>
         <li><a href="#projects" class="nav-link">Projects</a></li>
-        <li><a href="#publication" class="nav-link">Publication</a></li>
         <li><a href="#contact" class="nav-link contact-nav">Contact Me</a></li>
       </ul>
     </div>
@@ -76,10 +73,10 @@
       <div class="hero-inner">
         <div class="hero-text">
           <!-- Published badge: lead credential -->
-          <div class="published-badge">
+          <a class="published-badge" href="https://link.springer.com/chapter/10.1007/978-3-031-96235-6_5" target="_blank" rel="noopener">
             <span class="badge-pulse"></span>
             Published Researcher &nbsp;&middot;&nbsp; AIAI 2025 &nbsp;&middot;&nbsp; Springer
-          </div>
+          </a>
 
           <h1 class="hero-name">Eoin Houstoun</h1>
 
@@ -89,14 +86,18 @@
           </h2>
 
           <p class="hero-sub">
-            Building intelligent systems at the intersection of machine learning, clinical AI, and AI engineering.
-            Lead author of peer-reviewed research published in Springer's
-            <em>Artificial Intelligence Applications and Innovations</em>.
+            Building intelligent systems across machine learning, clinical AI, and AI engineering.
           </p>
+
+          <div class="chip-row hero-chips">
+            <span class="chip">AI Engineer @ TurinTech</span>
+            <span class="chip">MSc AI &amp; Data Science &middot; Distinction</span>
+            <span class="chip">First Class BSc &middot; UCC</span>
+          </div>
 
           <div class="hero-ctas">
             <a href="#projects" class="btn btn-primary">View My Work</a>
-            <a href="#publication" class="btn btn-secondary">Read My Paper</a>
+            <a href="https://link.springer.com/chapter/10.1007/978-3-031-96235-6_5" target="_blank" rel="noopener" class="btn btn-secondary">Read My Paper</a>
           </div>
 
           <div class="hero-current">
@@ -813,85 +814,6 @@
           <span class="projects-toggle-label">Show all projects</span>
           <svg class="projects-toggle-chevron" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><polyline points="6 9 12 15 18 9"/></svg>
         </button>
-      </div>
-    </div>
-  </section>
-
-  <!-- ===== PUBLICATION SECTION ===== -->
-  <section id="publication">
-    <div class="container">
-      <div class="section-header fade-in">
-        <span class="section-label">Research</span>
-        <h2>Published Work</h2>
-      </div>
-
-      <div class="publication-card fade-in">
-        <div class="pub-badge-row">
-          <span class="pub-badge pub-peer">Peer Reviewed</span>
-          <span class="pub-badge pub-springer">Springer</span>
-          <span class="pub-badge pub-aiai">AIAI 2025</span>
-        </div>
-
-        <div class="pub-body">
-          <div class="pub-icon" aria-hidden="true">
-            <svg width="48" height="48" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5">
-              <path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"/>
-              <polyline points="14 2 14 8 20 8"/>
-              <line x1="16" y1="13" x2="8" y2="13"/>
-              <line x1="16" y1="17" x2="8" y2="17"/>
-              <polyline points="10 9 9 9 8 9"/>
-            </svg>
-          </div>
-
-          <div class="pub-content">
-            <h3 class="pub-title">
-              Classifying Cognitive States of Alzheimer's Disease with Machine Learning Using Digital Biomarkers from the Bio-Hermes Study Cohort
-            </h3>
-
-            <div class="pub-meta">
-              <div class="pub-authors">Eoin Houstoun et al.</div>
-              <div class="pub-venue">
-                <em>Artificial Intelligence Applications and Innovations</em> - AIAI 2025<br>
-                IFIP Advances in Information and Communication Technology &middot; Springer &middot; 2025
-              </div>
-            </div>
-
-            <p class="pub-abstract">
-              This paper presents a machine learning approach to classifying individuals into cognitive states of
-              Alzheimer's disease using the Bio-Hermes dataset. Employing XGBoost, Random Forest, and Monte Carlo
-              cross-validation with rigorous feature selection, the work demonstrates high-accuracy classification
-              from digital biomarker data, advancing clinical AI decision-support for neurodegenerative conditions.
-            </p>
-
-            <div class="pub-actions">
-              <a href="https://link.springer.com/chapter/10.1007/978-3-031-96235-6_5" target="_blank" rel="noopener" class="btn btn-primary">
-                Read on Springer →
-              </a>
-              <a href="https://ifipaiai.org/2025/" target="_blank" rel="noopener" class="btn btn-secondary">
-                AIAI Conference
-              </a>
-              <a href="https://github.com/EoinHoustoun/Alzheimers_Biohermes" target="_blank" rel="noopener" class="btn btn-ghost">
-                View Code
-              </a>
-            </div>
-
-            <div class="pub-citation">
-              <span class="citation-label">Cite as</span>
-              <blockquote class="citation-text">
-                Houstoun, E. et al. (2025). Classifying Cognitive States of Alzheimer's Disease with Machine
-                Learning Using Digital Biomarkers from the Bio-Hermes Study Cohort. In: <em>Artificial Intelligence
-                Applications and Innovations</em>. AIAI 2025. IFIP Advances in Information and Communication
-                Technology, vol 758, pp. 55–68. Springer, Cham. https://doi.org/10.1007/978-3-031-96235-6_5
-              </blockquote>
-            </div>
-          </div>
-
-          <!-- Conference presentation photo -->
-          <figure class="pub-photo">
-            <img src="docs/assets/aiai_presenting.jpg" alt="Eoin presenting his research at the AIAI 2025 conference in Limassol, Cyprus" loading="lazy">
-            <figcaption>Presenting at AIAI 2025 &middot; Limassol, Cyprus</figcaption>
-          </figure>
-        </div>
       </div>
     </div>
   </section>
