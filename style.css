@@ -1184,6 +1184,7 @@ section:nth-child(even) {
 .projects-grid {
   display: grid;
   grid-template-columns: repeat(3, 1fr);
+  align-items: start;
   gap: 24px;
   margin-bottom: 60px;
 }
@@ -1328,7 +1329,6 @@ section:nth-child(even) {
   font-size: 0.92rem;
   color: var(--text-secondary);
   line-height: 1.75;
-  flex: 1;
 }
 
 .project-card p em {
@@ -2314,6 +2314,10 @@ a.published-badge:hover { opacity: 0.85; }
   gap: 18px;
   margin-top: 48px;
 }
+
+/* Tighten the seam between Snapshot and Experience */
+#snapshot { padding-bottom: 56px; }
+#experience { padding-top: 64px; }
 
 .skill-cat-title {
   font-size: 0.8rem;
