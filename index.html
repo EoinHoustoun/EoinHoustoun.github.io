@@ -27,7 +27,7 @@
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&display=swap" rel="stylesheet">
-  <link rel="stylesheet" href="style.css?v=3">
+  <link rel="stylesheet" href="style.css?v=4">
 </head>
 <body>
 
@@ -92,7 +92,7 @@
           <div class="chip-row hero-chips">
             <span class="chip">AI Engineer @ TurinTech</span>
             <span class="chip">MSc AI &amp; Data Science &middot; Distinction</span>
-            <span class="chip">First Class BSc &middot; UCC</span>
+            <span class="chip">BSc Data Science &amp; Analytics &middot; First Class Honours</span>
           </div>
 
           <div class="hero-ctas">
@@ -129,25 +129,15 @@
   <!-- ===== SNAPSHOT SECTION (about + education + skills) ===== -->
   <section id="snapshot">
     <div class="container">
-      <div class="section-header fade-in">
-        <span class="section-label">Snapshot</span>
-        <h2>Who I Am, In One Screen</h2>
-      </div>
-
       <div class="about-grid">
-        <div class="about-photo fade-in">
-          <div class="viz-frame">
-            <canvas id="dataViz" aria-label="Animated data visualisation: a forecast line with confidence intervals and points forming a normal distribution"></canvas>
-            <div class="viz-caption" id="vizCaption">Forecast &middot; 95% CI</div>
-          </div>
-        </div>
-
         <div class="about-text fade-in">
           <p>
-            AI Engineer at <strong>TurinTech</strong>, building Artemis — code optimisation that makes
-            LLM inference faster and cheaper. Lead author of peer-reviewed Alzheimer's research published
-            by <strong>Springer (AIAI 2025)</strong>. I specialise in end-to-end ML: rigorous validation,
-            interpretability, and deployment.
+            AI Engineer at <strong>TurinTech</strong>, developing Artemis, an agent-powered code
+            optimisation platform that improves codebase performance, speeds up LLM inference, and
+            cuts compute costs. Lead author of peer-reviewed Alzheimer's research published by
+            <strong>Springer (AIAI 2025)</strong>. I specialise in end-to-end machine learning, with
+            strengths in data validation, statistical modelling, deployment, and making data
+            explainable for both technical and non-technical audiences.
           </p>
           <div class="about-links">
             <a href="https://github.com/EoinHoustoun" target="_blank" rel="noopener" class="about-link">
@@ -186,10 +176,11 @@
       </div>
 
       <!-- Education: three compact cards -->
+      <h3 class="snapshot-subhead fade-in">Education</h3>
       <div class="snapshot-edu">
         <div class="edu-card edu-card--compact fade-in">
           <div class="edu-photo edu-photo--compact">
-            <img src="docs/assets/goldsmiths_grad.jpg" alt="Eoin celebrating his MSc graduation in front of Big Ben, London" loading="lazy">
+            <img src="docs/assets/goldsmiths_grad.jpg" alt="Eoin celebrating his MSc graduation in front of Big Ben, London" style="object-position: center 26%;" loading="lazy">
           </div>
           <div class="edu-body">
             <div class="edu-meta">
@@ -204,8 +195,8 @@
         <div class="edu-card edu-card--compact fade-in">
           <div class="edu-photo edu-photo--compact">
             <div class="slideshow slideshow--crossfade" data-interval="3500">
-              <img src="docs/assets/ucc_grad.jpg" alt="Eoin's BSc graduation portrait, University College Cork" class="slide active" loading="lazy">
-              <img src="docs/assets/ucc_hats.jpg" alt="Eoin and classmates throwing graduation caps at UCC" class="slide" loading="lazy">
+              <img src="docs/assets/ucc_grad.jpg" alt="Eoin's BSc graduation portrait, University College Cork" class="slide active" style="object-position: center 26%;" loading="lazy">
+              <img src="docs/assets/ucc_hats.jpg" alt="Eoin and classmates throwing graduation caps at UCC" class="slide" style="object-position: center 42%;" loading="lazy">
               <div class="slide-dots"></div>
             </div>
           </div>
@@ -305,7 +296,7 @@
               </div>
               <h3 class="timeline-role">AI Engineer</h3>
               <div class="timeline-company">TurinTech &middot; London, UK <img class="flag-icon" src="docs/assets/flag_gb.png" alt="Flag of the United Kingdom"></div>
-              <p class="timeline-glance">Building <strong>Artemis</strong> — code optimisation that makes LLM inference faster and cheaper.</p>
+              <p class="timeline-glance">Building <strong>Artemis</strong>, an agent-powered code optimisation platform that makes LLM inference faster and cheaper.</p>
               <div class="chip-row">
                 <span class="chip">Multi-agent systems &middot; Claude API</span>
                 <span class="chip">LLM benchmarking</span>
@@ -344,7 +335,7 @@
               </div>
               <h3 class="timeline-role">AI Researcher</h3>
               <div class="timeline-company">University of London, Goldsmiths &middot; London, UK <img class="flag-icon" src="docs/assets/flag_gb.png" alt="Flag of the United Kingdom"></div>
-              <p class="timeline-glance">Published <strong>Alzheimer's classification research</strong> — Springer, AIAI 2025.</p>
+              <p class="timeline-glance">Published <strong>Alzheimer's classification research</strong> with Springer at AIAI 2025.</p>
               <div class="chip-row">
                 <span class="chip">Springer publication</span>
                 <span class="chip">SHAP + FDR feature selection</span>
@@ -448,7 +439,7 @@
             </span>
           </div>
           <h3>Alzheimer's Disease Classification</h3>
-          <p class="project-glance">ML classification of Alzheimer's cognitive states from digital biomarkers — peer-reviewed and published by Springer.</p>
+          <p class="project-glance">Machine learning classification of Alzheimer's cognitive states from digital biomarkers, peer-reviewed and published by Springer.</p>
           <div class="chip-row">
             <span class="chip">Springer &middot; AIAI 2025</span>
             <span class="chip">Presented in Limassol, Cyprus</span>
@@ -542,7 +533,7 @@
             </span>
           </div>
           <h3>Pediatric Appendicitis Prediction</h3>
-          <p class="project-glance">Clinical decision support for appendicitis diagnosis and severity — live and interactive.</p>
+          <p class="project-glance">Clinical decision support for appendicitis diagnosis and severity, live and interactive.</p>
           <div class="chip-row">
             <span class="chip">Live Gradio demo</span>
             <span class="chip">Diagnosis + severity</span>
@@ -973,6 +964,6 @@
     </div>
   </footer>
 
-  <script src="script.js?v=3"></script>
+  <script src="script.js?v=4"></script>
 </body>
 </html>
