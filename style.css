@@ -2303,7 +2303,7 @@ footer {
 }
 
 /* Content sits above the canvas */
-#navbar, section, footer { position: relative; z-index: 1; }
+section, footer { position: relative; z-index: 1; }
 
 /* Let the constellation show through between blocks */
 section { background-color: transparent; }
