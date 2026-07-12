@@ -2393,6 +2393,39 @@ a.published-badge:hover { opacity: 0.85; }
 }
 
 /* ============================================================
+   EXPANDERS (details reveal on cards)
+   ============================================================ */
+.expander-toggle {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  margin-top: 12px;
+  padding: 7px 14px;
+  font-family: var(--font);
+  font-size: 0.78rem;
+  font-weight: 600;
+  color: var(--text-secondary);
+  background: transparent;
+  border: 1px solid rgba(255, 255, 255, 0.14);
+  border-radius: 999px;
+  cursor: pointer;
+  transition: color var(--transition), border-color var(--transition);
+}
+.expander-toggle:hover { color: var(--text-primary); border-color: var(--accent-border); }
+.expander-toggle svg { transition: transform var(--transition); }
+.expander-toggle[aria-expanded="true"] svg { transform: rotate(180deg); }
+
+.expander-body { margin-top: 14px; }
+
+[data-theme="light"] .expander-toggle { border-color: rgba(15, 26, 36, 0.18); }
+
+.timeline-glance {
+  margin-top: 8px;
+  font-size: 0.95rem;
+  color: var(--text-primary);
+}
+
+/* ============================================================
    NEURAL CONSTELLATION BACKGROUND
    ============================================================ */
 #constellation {

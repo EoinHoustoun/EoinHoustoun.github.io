@@ -754,3 +754,22 @@
   build();
   requestAnimationFrame(frame);
 })();
+
+/* ===== GLANCE EXPANDERS (experience + project details) =====
+   Content is in the DOM by default (works without JS); JS hides it
+   on load and toggles it per-card. */
+(function initExpanders() {
+  document.querySelectorAll('.expander-body').forEach((body) => { body.hidden = true; });
+
+  document.querySelectorAll('.expander-toggle').forEach((btn) => {
+    const body = document.getElementById(btn.getAttribute('aria-controls'));
+    if (!body) return;
+    const label = btn.querySelector('.expander-label');
+    btn.addEventListener('click', () => {
+      const isOpen = btn.getAttribute('aria-expanded') === 'true';
+      btn.setAttribute('aria-expanded', String(!isOpen));
+      body.hidden = isOpen;
+      if (label) label.textContent = isOpen ? 'Details' : 'Hide details';
+    });
+  });
+})();
