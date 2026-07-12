@@ -12,7 +12,7 @@
   const titles = [
     'Data Scientist',
     'AI Engineer',
-    'ML Researcher',
+    'Machine Learning Researcher',
     'Published Researcher',
   ];
 
