@@ -2029,10 +2029,6 @@ footer {
     gap: 36px;
   }
 
-  .about-photo {
-    display: none; /* hide headshot on tablet to save space */
-  }
-
   .about-stats {
     grid-template-columns: repeat(4, 1fr);
   }
