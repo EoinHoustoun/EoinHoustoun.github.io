@@ -619,3 +619,138 @@
     setLabel(expanding);
   });
 })();
+
+/* ===== NEURAL CONSTELLATION BACKGROUND =====
+   Drifting nodes linked by faint lines; the cursor gently attracts
+   nodes and draws temporary links. Disabled for reduced motion,
+   paused when the tab is hidden, dimmed in light mode. */
+(function initConstellation() {
+  const canvas = document.getElementById('constellation');
+  if (!canvas) return;
+  if (window.matchMedia('(prefers-reduced-motion: reduce)').matches) {
+    canvas.remove();
+    return;
+  }
+
+  const ctx = canvas.getContext('2d');
+  let W, H, nodes = [], linkDist;
+  const mouse = { x: null, y: null };
+  const MOUSE_RANGE = 160;
+
+  function isLight() {
+    return document.documentElement.getAttribute('data-theme') === 'light';
+  }
+
+  function build() {
+    const dpr = window.devicePixelRatio || 1;
+    W = window.innerWidth;
+    H = window.innerHeight;
+    canvas.width = W * dpr;
+    canvas.height = H * dpr;
+    ctx.setTransform(dpr, 0, 0, dpr, 0, 0);
+
+    const count = Math.min(70, Math.max(28, Math.round((W * H) / 22000)));
+    linkDist = Math.min(170, Math.max(110, W / 9));
+    nodes = [];
+    for (let i = 0; i < count; i++) {
+      nodes.push({
+        x: Math.random() * W,
+        y: Math.random() * H,
+        vx: (Math.random() - 0.5) * 0.22,
+        vy: (Math.random() - 0.5) * 0.22,
+        r: 1 + Math.random() * 1.6,
+      });
+    }
+  }
+
+  let resizeTimer;
+  window.addEventListener('resize', () => {
+    clearTimeout(resizeTimer);
+    resizeTimer = setTimeout(build, 200);
+  });
+  window.addEventListener('mousemove', (e) => {
+    mouse.x = e.clientX;
+    mouse.y = e.clientY;
+  }, { passive: true });
+  document.addEventListener('mouseleave', () => { mouse.x = null; });
+
+  let running = true;
+  document.addEventListener('visibilitychange', () => {
+    const wasRunning = running;
+    running = !document.hidden;
+    if (running && !wasRunning) requestAnimationFrame(frame);
+  });
+
+  function frame() {
+    if (!running) return;
+    requestAnimationFrame(frame);
+    ctx.clearRect(0, 0, W, H);
+
+    const light = isLight();
+    const rgb = light ? '8,145,178' : '0,212,255';
+    const nodeAlpha = light ? 0.30 : 0.70;
+    const lineBase = light ? 0.09 : 0.20;
+    const maxD2 = linkDist * linkDist;
+
+    // Move nodes (gentle cursor attraction + drift + bounce)
+    for (const n of nodes) {
+      if (mouse.x !== null) {
+        const dx = mouse.x - n.x, dy = mouse.y - n.y;
+        const d2 = dx * dx + dy * dy;
+        if (d2 > 1 && d2 < MOUSE_RANGE * MOUSE_RANGE) {
+          const f = 0.012 / Math.sqrt(d2);
+          n.vx += dx * f;
+          n.vy += dy * f;
+        }
+      }
+      n.vx = Math.max(-0.4, Math.min(0.4, n.vx));
+      n.vy = Math.max(-0.4, Math.min(0.4, n.vy));
+      n.x += n.vx;
+      n.y += n.vy;
+      if (n.x < 0 || n.x > W) { n.vx *= -1; n.x = Math.max(0, Math.min(W, n.x)); }
+      if (n.y < 0 || n.y > H) { n.vy *= -1; n.y = Math.max(0, Math.min(H, n.y)); }
+    }
+
+    // Node-to-node links
+    ctx.lineWidth = 1;
+    for (let i = 0; i < nodes.length; i++) {
+      for (let j = i + 1; j < nodes.length; j++) {
+        const dx = nodes[i].x - nodes[j].x, dy = nodes[i].y - nodes[j].y;
+        const d2 = dx * dx + dy * dy;
+        if (d2 < maxD2) {
+          ctx.strokeStyle = 'rgba(' + rgb + ',' + (lineBase * (1 - d2 / maxD2)).toFixed(3) + ')';
+          ctx.beginPath();
+          ctx.moveTo(nodes[i].x, nodes[i].y);
+          ctx.lineTo(nodes[j].x, nodes[j].y);
+          ctx.stroke();
+        }
+      }
+    }
+
+    // Cursor links (slightly brighter)
+    if (mouse.x !== null) {
+      for (const n of nodes) {
+        const dx = n.x - mouse.x, dy = n.y - mouse.y;
+        const d2 = dx * dx + dy * dy;
+        if (d2 < maxD2) {
+          ctx.strokeStyle = 'rgba(' + rgb + ',' + ((lineBase + 0.10) * (1 - d2 / maxD2)).toFixed(3) + ')';
+          ctx.beginPath();
+          ctx.moveTo(n.x, n.y);
+          ctx.lineTo(mouse.x, mouse.y);
+          ctx.stroke();
+        }
+      }
+    }
+
+    // Nodes
+    ctx.fillStyle = 'rgba(' + rgb + ',' + nodeAlpha + ')';
+    for (const n of nodes) {
+      ctx.beginPath();
+      ctx.arc(n.x, n.y, n.r, 0, Math.PI * 2);
+      ctx.fill();
+    }
+  }
+
+  build();
+  requestAnimationFrame(frame);
+})();

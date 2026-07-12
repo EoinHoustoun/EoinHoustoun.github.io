@@ -2291,6 +2291,29 @@ footer {
 [data-theme="light"] .timeline-badge { background: rgba(15,26,36,0.05);   border-color: rgba(15,26,36,0.10); }
 
 /* ============================================================
+   NEURAL CONSTELLATION BACKGROUND
+   ============================================================ */
+#constellation {
+  position: fixed;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  z-index: 0;
+  pointer-events: none;
+}
+
+/* Content sits above the canvas */
+#navbar, section, footer { position: relative; z-index: 1; }
+
+/* Let the constellation show through between blocks */
+section { background-color: transparent; }
+section:nth-child(even) { background-color: rgba(17, 17, 17, 0.72); }
+#hero { background-color: transparent; }
+
+[data-theme="light"] section:nth-child(even) { background-color: rgba(238, 242, 247, 0.80); }
+[data-theme="light"] #hero { background-color: transparent; }
+
+/* ============================================================
    REDUCED MOTION  (respect OS "reduce motion" setting)
    ============================================================ */
 @media (prefers-reduced-motion: reduce) {
