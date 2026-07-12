@@ -2425,6 +2425,10 @@ a.published-badge:hover { opacity: 0.85; }
   color: var(--text-primary);
 }
 
+.project-glance { font-size: 0.95rem; }
+.pub-photo--card { max-width: 420px; margin: 16px 0; }
+.pub-photo--card img { border-radius: var(--radius-md); }
+
 /* ============================================================
    NEURAL CONSTELLATION BACKGROUND
    ============================================================ */

@@ -448,13 +448,38 @@
             </span>
           </div>
           <h3>Alzheimer's Disease Classification</h3>
-          <p>
-            Classified individuals into cognitive states of Alzheimer's disease using machine learning on the
-            Bio-Hermes dataset. Published at the AIAI 2025 International Conference in Springer's
-            <em>Artificial Intelligence Applications and Innovations</em>. Invited to present the research
-            at the AIAI 2025 conference in Limassol, Cyprus, delivering the findings to an international
-            audience of AI researchers.
-          </p>
+          <p class="project-glance">ML classification of Alzheimer's cognitive states from digital biomarkers — peer-reviewed and published by Springer.</p>
+          <div class="chip-row">
+            <span class="chip">Springer &middot; AIAI 2025</span>
+            <span class="chip">Presented in Limassol, Cyprus</span>
+            <span class="chip">Bio-Hermes cohort</span>
+          </div>
+          <button class="expander-toggle" type="button" aria-expanded="false" aria-controls="exp-alzheimers">
+            <span class="expander-label">Details</span>
+            <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><polyline points="6 9 12 15 18 9"/></svg>
+          </button>
+          <div class="expander-body" id="exp-alzheimers">
+            <p>
+              Classified individuals into cognitive states of Alzheimer's disease using machine learning on the
+              Bio-Hermes dataset. Employing XGBoost, Random Forest, and Monte Carlo cross-validation with rigorous
+              feature selection, the work demonstrates high-accuracy classification from digital biomarker data,
+              advancing clinical AI decision-support for neurodegenerative conditions. Invited to present at the
+              AIAI 2025 International Conference in Limassol, Cyprus.
+            </p>
+            <figure class="pub-photo pub-photo--card">
+              <img src="docs/assets/aiai_presenting.jpg" alt="Eoin presenting his research at the AIAI 2025 conference in Limassol, Cyprus" loading="lazy">
+              <figcaption>Presenting at AIAI 2025 &middot; Limassol, Cyprus</figcaption>
+            </figure>
+            <div class="pub-citation">
+              <span class="citation-label">Cite as</span>
+              <blockquote class="citation-text">
+                Houstoun, E. et al. (2025). Classifying Cognitive States of Alzheimer's Disease with Machine
+                Learning Using Digital Biomarkers from the Bio-Hermes Study Cohort. In: <em>Artificial Intelligence
+                Applications and Innovations</em>. AIAI 2025. IFIP Advances in Information and Communication
+                Technology, vol 758, pp. 55–68. Springer, Cham. https://doi.org/10.1007/978-3-031-96235-6_5
+              </blockquote>
+            </div>
+          </div>
           <div class="tech-stack">
             <span>XGBoost</span>
             <span>Random Forest</span>
@@ -477,10 +502,22 @@
             <span class="category-badge badge-clinical">Clinical AI</span>
           </div>
           <h3>Fever Prediction with Infrared Thermography</h3>
-          <p>
-            Estimates oral temperature and detects fever from non-contact infrared thermal sensor data.
-            Features custom PyTorch MLPs and rigorous SHAP-based model interpretability.
-          </p>
+          <p class="project-glance">Non-contact fever detection and oral-temperature estimation from infrared thermal data.</p>
+          <div class="chip-row">
+            <span class="chip">Custom PyTorch MLPs</span>
+            <span class="chip">SHAP interpretability</span>
+            <span class="chip">Nested CV</span>
+          </div>
+          <button class="expander-toggle" type="button" aria-expanded="false" aria-controls="exp-fever">
+            <span class="expander-label">Details</span>
+            <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><polyline points="6 9 12 15 18 9"/></svg>
+          </button>
+          <div class="expander-body" id="exp-fever">
+            <p>
+              Estimates oral temperature and detects fever from non-contact infrared thermal sensor data.
+              Features custom PyTorch MLPs and rigorous SHAP-based model interpretability.
+            </p>
+          </div>
           <div class="tech-stack">
             <span>PyTorch</span>
             <span>XGBoost</span>
@@ -505,10 +542,22 @@
             </span>
           </div>
           <h3>Pediatric Appendicitis Prediction</h3>
-          <p>
-            Clinical decision-support tool classifying appendicitis diagnosis and severity from patient data.
-            Deployed as a live, interactive Gradio web application for real-time clinical use.
-          </p>
+          <p class="project-glance">Clinical decision support for appendicitis diagnosis and severity — live and interactive.</p>
+          <div class="chip-row">
+            <span class="chip">Live Gradio demo</span>
+            <span class="chip">Diagnosis + severity</span>
+            <span class="chip">XGBoost + MLP</span>
+          </div>
+          <button class="expander-toggle" type="button" aria-expanded="false" aria-controls="exp-appendicitis">
+            <span class="expander-label">Details</span>
+            <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><polyline points="6 9 12 15 18 9"/></svg>
+          </button>
+          <div class="expander-body" id="exp-appendicitis">
+            <p>
+              Clinical decision-support tool classifying appendicitis diagnosis and severity from patient data.
+              Deployed as a live, interactive Gradio web application for real-time clinical use.
+            </p>
+          </div>
           <div class="tech-stack">
             <span>XGBoost</span>
             <span>MLP</span>
@@ -537,11 +586,23 @@
             <span class="category-badge badge-sports">Sports Analytics</span>
           </div>
           <h3>Premier League Match Predictor</h3>
-          <p>
-            Predicts Premier League match outcomes using a Dixon-Coles, Poisson, XGBoost, and
-            draw specialist ensemble. Includes a mock betting portfolio with Kelly criterion
-            sizing and live odds integration.
-          </p>
+          <p class="project-glance">Ensemble match-outcome predictor with a Kelly-sized mock betting portfolio.</p>
+          <div class="chip-row">
+            <span class="chip">Dixon-Coles ensemble</span>
+            <span class="chip">Kelly criterion sizing</span>
+            <span class="chip">Live odds integration</span>
+          </div>
+          <button class="expander-toggle" type="button" aria-expanded="false" aria-controls="exp-fpred">
+            <span class="expander-label">Details</span>
+            <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><polyline points="6 9 12 15 18 9"/></svg>
+          </button>
+          <div class="expander-body" id="exp-fpred">
+            <p>
+              Predicts Premier League match outcomes using a Dixon-Coles, Poisson, XGBoost, and
+              draw specialist ensemble. Includes a mock betting portfolio with Kelly criterion
+              sizing and live odds integration.
+            </p>
+          </div>
           <div class="tech-stack">
             <span>Dixon-Coles MLE</span>
             <span>XGBoost</span>
@@ -570,11 +631,23 @@
             <span class="category-badge badge-sports">Sports Analytics</span>
           </div>
           <h3>Fantasy Football AI Planner</h3>
-          <p>
-            FPL analytics platform combining Dixon-Coles team strength modelling, exponentially
-            weighted player form, and XGBoost point predictions to drive data-driven transfer, captain,
-            and chip decisions.
-          </p>
+          <p class="project-glance">FPL analytics platform driving transfer, captain and chip decisions.</p>
+          <div class="chip-row">
+            <span class="chip">XGBoost point predictions</span>
+            <span class="chip">Dixon-Coles team strength</span>
+            <span class="chip">EWM player form</span>
+          </div>
+          <button class="expander-toggle" type="button" aria-expanded="false" aria-controls="exp-fpl">
+            <span class="expander-label">Details</span>
+            <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><polyline points="6 9 12 15 18 9"/></svg>
+          </button>
+          <div class="expander-body" id="exp-fpl">
+            <p>
+              FPL analytics platform combining Dixon-Coles team strength modelling, exponentially
+              weighted player form, and XGBoost point predictions to drive data-driven transfer, captain,
+              and chip decisions.
+            </p>
+          </div>
           <div class="tech-stack">
             <span>Dixon-Coles</span>
             <span>XGBoost</span>
@@ -597,11 +670,23 @@
             <span class="category-badge badge-sports">Sports Analytics</span>
           </div>
           <h3>Football Transfer Intelligence Agent</h3>
-          <p>
-            Predicts EPL transfer adaptation scores using a stacked ensemble of XGBoost and LightGBM
-            base learners with a Ridge meta-learner. Features Optuna hyperparameter optimisation,
-            xG/xA feature engineering, and a Flask API for real-time predictions.
-          </p>
+          <p class="project-glance">Stacked ensemble predicting EPL transfer adaptation, served via a Flask API.</p>
+          <div class="chip-row">
+            <span class="chip">XGBoost + LightGBM stack</span>
+            <span class="chip">Optuna HPO</span>
+            <span class="chip">xG / xA features</span>
+          </div>
+          <button class="expander-toggle" type="button" aria-expanded="false" aria-controls="exp-fti">
+            <span class="expander-label">Details</span>
+            <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><polyline points="6 9 12 15 18 9"/></svg>
+          </button>
+          <div class="expander-body" id="exp-fti">
+            <p>
+              Predicts EPL transfer adaptation scores using a stacked ensemble of XGBoost and LightGBM
+              base learners with a Ridge meta-learner. Features Optuna hyperparameter optimisation,
+              xG/xA feature engineering, and a Flask API for real-time predictions.
+            </p>
+          </div>
           <div class="tech-stack">
             <span>XGBoost</span>
             <span>LightGBM</span>
@@ -624,10 +709,22 @@
             <span class="category-badge badge-sports">Sports Analytics</span>
           </div>
           <h3>Validation Procedures Exploration</h3>
-          <p>
-            Football player transfer fee prediction as a rigorous case study in validation methodology.
-            Systematically compares cross-validation variants, temporal validation, and bootstrapping.
-          </p>
+          <p class="project-glance">Transfer-fee prediction as a rigorous case study in validation methodology.</p>
+          <div class="chip-row">
+            <span class="chip">CV variants compared</span>
+            <span class="chip">Temporal validation</span>
+            <span class="chip">Bootstrapping</span>
+          </div>
+          <button class="expander-toggle" type="button" aria-expanded="false" aria-controls="exp-validation">
+            <span class="expander-label">Details</span>
+            <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><polyline points="6 9 12 15 18 9"/></svg>
+          </button>
+          <div class="expander-body" id="exp-validation">
+            <p>
+              Football player transfer fee prediction as a rigorous case study in validation methodology.
+              Systematically compares cross-validation variants, temporal validation, and bootstrapping.
+            </p>
+          </div>
           <div class="tech-stack">
             <span>Regression</span>
             <span>Cross-Validation</span>
@@ -649,10 +746,21 @@
             <span class="category-badge badge-cv">Computer Vision</span>
           </div>
           <h3>Neural Style Transfer</h3>
-          <p>
-            Transforms celebrity faces into comic book illustrations using deep neural artistic rendering.
-            Combines content and style loss functions for visually striking photorealistic stylisation.
-          </p>
+          <p class="project-glance">Celebrity faces re-rendered as comic-book art with deep neural style transfer.</p>
+          <div class="chip-row">
+            <span class="chip">VGG19</span>
+            <span class="chip">Content + style loss</span>
+          </div>
+          <button class="expander-toggle" type="button" aria-expanded="false" aria-controls="exp-nst">
+            <span class="expander-label">Details</span>
+            <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><polyline points="6 9 12 15 18 9"/></svg>
+          </button>
+          <div class="expander-body" id="exp-nst">
+            <p>
+              Transforms celebrity faces into comic book illustrations using deep neural artistic rendering.
+              Combines content and style loss functions for visually striking photorealistic stylisation.
+            </p>
+          </div>
           <div class="tech-stack">
             <span>VGG19</span>
             <span>PyTorch</span>
@@ -673,10 +781,22 @@
             <span class="category-badge badge-nlp">NLP</span>
           </div>
           <h3>AI Chef Chatbot</h3>
-          <p>
-            Recipe recommendation chatbot with a Tkinter desktop GUI. Uses DistilBERT for semantic
-            similarity and TF-IDF retrieval, enhanced with web scraping for live ingredient-aware suggestions.
-          </p>
+          <p class="project-glance">Ingredient-aware recipe chatbot with semantic search.</p>
+          <div class="chip-row">
+            <span class="chip">DistilBERT similarity</span>
+            <span class="chip">TF-IDF retrieval</span>
+            <span class="chip">Live web scraping</span>
+          </div>
+          <button class="expander-toggle" type="button" aria-expanded="false" aria-controls="exp-chef">
+            <span class="expander-label">Details</span>
+            <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><polyline points="6 9 12 15 18 9"/></svg>
+          </button>
+          <div class="expander-body" id="exp-chef">
+            <p>
+              Recipe recommendation chatbot with a Tkinter desktop GUI. Uses DistilBERT for semantic
+              similarity and TF-IDF retrieval, enhanced with web scraping for live ingredient-aware suggestions.
+            </p>
+          </div>
           <div class="tech-stack">
             <span>DistilBERT</span>
             <span>TF-IDF</span>
@@ -698,11 +818,23 @@
             <span class="category-badge badge-nlp">NLP</span>
           </div>
           <h3>YouTube Sentiment Analyser</h3>
-          <p>
-            Deep learning NLP pipeline that classifies YouTube comment sentiment and detects six
-            emotions using RoBERTa and DistilRoBERTa transformer models. Outputs an engagement
-            health score with word clouds, timelines, and PDF/CSV export.
-          </p>
+          <p class="project-glance">Comment sentiment and six-emotion detection with an engagement health score.</p>
+          <div class="chip-row">
+            <span class="chip">RoBERTa + DistilRoBERTa</span>
+            <span class="chip">6-emotion detection</span>
+            <span class="chip">PDF/CSV export</span>
+          </div>
+          <button class="expander-toggle" type="button" aria-expanded="false" aria-controls="exp-yt">
+            <span class="expander-label">Details</span>
+            <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><polyline points="6 9 12 15 18 9"/></svg>
+          </button>
+          <div class="expander-body" id="exp-yt">
+            <p>
+              Deep learning NLP pipeline that classifies YouTube comment sentiment and detects six
+              emotions using RoBERTa and DistilRoBERTa transformer models. Outputs an engagement
+              health score with word clouds, timelines, and PDF/CSV export.
+            </p>
+          </div>
           <div class="tech-stack">
             <span>RoBERTa</span>
             <span>DistilRoBERTa</span>
