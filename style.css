@@ -1203,10 +1203,10 @@ section:nth-child(even) {
   background: var(--bg-card);
   border: 1px solid #1f1f1f;
   border-radius: var(--radius-lg);
-  padding: 28px;
+  padding: 20px;
   display: flex;
   flex-direction: column;
-  gap: 16px;
+  gap: 12px;
   transition: all var(--transition);
   position: relative;
   overflow: hidden;
@@ -1341,6 +1341,7 @@ section:nth-child(even) {
   display: flex;
   flex-wrap: wrap;
   gap: 8px;
+  margin-top: 14px;
 }
 
 .tech-stack span {
@@ -1359,8 +1360,8 @@ section:nth-child(even) {
 
 /* Card images */
 .card-img {
-  margin: -28px -28px 0 -28px;
-  height: 210px;
+  margin: -20px -20px 0 -20px;
+  height: 160px;
   overflow: hidden;
   border-radius: var(--radius-lg) var(--radius-lg) 0 0;
   background: #0e0e0e;
@@ -2310,23 +2311,23 @@ a.published-badge:hover { opacity: 0.85; }
 .snapshot-skills {
   display: grid;
   grid-template-columns: repeat(2, 1fr);
-  gap: 24px;
-  margin-top: 56px;
+  gap: 18px;
+  margin-top: 48px;
 }
 
 .skill-cat-title {
-  font-size: 0.85rem;
+  font-size: 0.8rem;
   font-weight: 700;
   text-transform: uppercase;
   letter-spacing: 0.08em;
   color: var(--text-secondary);
-  margin-bottom: 12px;
+  margin-bottom: 10px;
 }
 
 .skill-tiles {
   display: grid;
-  grid-template-columns: repeat(auto-fill, minmax(108px, 1fr));
-  gap: 10px;
+  grid-template-columns: repeat(auto-fill, minmax(94px, 1fr));
+  gap: 8px;
 }
 
 .skill-tile {
@@ -2334,8 +2335,8 @@ a.published-badge:hover { opacity: 0.85; }
   flex-direction: column;
   align-items: center;
   justify-content: center;
-  gap: 8px;
-  padding: 14px 6px;
+  gap: 6px;
+  padding: 10px 5px;
   text-align: center;
   background: var(--bg-card);
   border: 1px solid rgba(255, 255, 255, 0.06);
@@ -2350,7 +2351,7 @@ a.published-badge:hover { opacity: 0.85; }
   border-color: var(--accent-border);
   color: var(--text-primary);
 }
-.skill-tile svg { width: 26px; height: 26px; color: var(--accent); }
+.skill-tile svg { width: 20px; height: 20px; color: var(--accent); }
 
 [data-theme="light"] .skill-tile { border-color: rgba(15, 26, 36, 0.10); }
 
