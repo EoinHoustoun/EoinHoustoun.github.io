@@ -27,7 +27,7 @@
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&display=swap" rel="stylesheet">
-  <link rel="stylesheet" href="style.css?v=8">
+  <link rel="stylesheet" href="style.css?v=9">
 </head>
 <body>
 
@@ -87,7 +87,7 @@
           </h2>
 
           <p class="hero-sub">
-            AI Engineer building LLM agents and the statistics that keep them honest. Merged fixes in vLLM, unsloth, sherpa-onnx and WhisperLiveKit.
+            AI Engineer building agentic code optimisation and the statistics that prove it works. Published machine learning researcher.
           </p>
 
           <div class="chip-row hero-chips">
@@ -103,7 +103,7 @@
 
           <div class="hero-current">
             <span class="hero-current-dot"></span>
-            Currently: optimising LLM inference at <strong>TurinTech</strong>, with open pull requests at NVIDIA NeMo
+            Currently: building <strong>Artemis</strong> at TurinTech, an agentic code optimisation platform
           </div>
         </div>
 
@@ -134,19 +134,19 @@
         <div class="about-text fade-in">
           <p>
             AI Engineer on the Research and Data Science team at <strong>TurinTech</strong>, building
-            Artemis, an agent-powered code optimisation platform. I build the LLM agent system that
-            generates and tests code changes, and own the statistical validation layer that decides
-            whether a change is a real improvement or noise. That work has produced fixes merged into
-            <strong>vLLM, unsloth, sherpa-onnx and WhisperLiveKit</strong>.
+            Artemis, a code optimisation platform whose agents explore a codebase, hypothesise changes,
+            benchmark them and select the best improvement. I build the agentic system behind that loop
+            and brought <strong>statistical testing, confidence intervals and A/B validation</strong> to
+            the platform, so every reported gain is proven real rather than noise.
           </p>
           <p>
             Lead author of peer-reviewed Alzheimer's research published by
             <strong>Springer (AIAI 2025)</strong>.
           </p>
           <p>
-            I specialise in end-to-end machine learning, with strengths in data validation,
-            statistical modelling, deployment, and making data explainable for both technical
-            and non-technical audiences.
+            Outside work I build statistical models and prediction apps for the questions I find
+            interesting, from Premier League forecasting to clinical decision support. Everything
+            below is a project you can open, run or read.
           </p>
           <div class="about-links">
             <a href="https://github.com/EoinHoustoun" target="_blank" rel="noopener" class="about-link">
@@ -305,11 +305,11 @@
               </div>
               <h3 class="timeline-role">AI Engineer</h3>
               <div class="timeline-company">TurinTech &middot; London, UK <img class="flag-icon" src="docs/assets/flag_gb.png" alt="Flag of the United Kingdom"></div>
-              <p class="timeline-glance">On the Data Science &amp; Research team, building <strong>Artemis</strong>, an agent-powered code optimisation platform that makes LLM inference faster and cheaper.</p>
+              <p class="timeline-glance">Building <strong>Artemis</strong>, a code optimisation platform whose agents explore a codebase, hypothesise changes, benchmark them and select the best improvement.</p>
               <div class="chip-row">
                 <span class="chip">Statistical validation layer</span>
-                <span class="chip">LangGraph coding agents</span>
-                <span class="chip">Upstream fixes: vLLM, unsloth, NeMo</span>
+                <span class="chip">Autonomous coding agents</span>
+                <span class="chip">A/B-verified optimisations</span>
               </div>
               <button class="expander-toggle" type="button" aria-expanded="false" aria-controls="exp-turintech">
                 <span class="expander-label">Details</span>
@@ -317,11 +317,11 @@
               </button>
               <div class="expander-body" id="exp-turintech">
                 <ul class="timeline-bullets">
-                  <li>Designed and delivered the platform's statistical validation layer: Welch confidence intervals, significance-gated verdicts in place of raw percentage comparisons, an empirical Bayes shrunk scoring model, and a power-based planner that tells users how many benchmark runs a conclusive result needs. Found and fixed three statistical defects in the production maths, including a variance estimator that understated uncertainty on small samples.</li>
-                  <li>Built and hardened a LangGraph-based autonomous coding agent: fixed a class of failures where runs reported success while producing nothing, cut per-campaign token cost by 25% through prompt-window management, and built a pre-flight cost estimator validated on held-out data.</li>
-                  <li>Ran controlled optimisation campaigns across vLLM, OpenVINO and ONNX inference stacks, delivering A/B-verified gains including +9.8% generation throughput on a quantised LLM and -49% CPU on a benchmark harness. Established the practice of recomputing and significance-testing every reported gain.</li>
-                  <li>Drove the optimisation agent at public issues, then reviewed, tested and defended each candidate by hand: six pull requests raised into vLLM, unsloth, NVIDIA NeMo, sherpa-onnx and WhisperLiveKit, four merged.</li>
-                  <li>Designing multi-agent and subagent systems with the Claude API, including an in-product AI assistant that guides users through Artemis, and supporting technical pre-sales with client engineering teams.</li>
+                  <li><strong>Statistical validation:</strong> designed and delivered the platform's validation layer: Welch confidence intervals, significance-gated verdicts, an empirical Bayes scoring model and a power-based run planner.</li>
+                  <li><strong>Agent engineering:</strong> built and hardened autonomous coding agents, plus subagents that guide users through benchmark setup. Cut per-campaign token cost by 25%.</li>
+                  <li><strong>Inference optimisation:</strong> A/B-verified campaigns across vLLM, OpenVINO and ONNX Runtime: +9.8% generation throughput on a 1.58-bit LLM, -49% CPU on a benchmark harness, +107% on a simulation workload.</li>
+                  <li><strong>Open source:</strong> drove the optimisation agent at public codebases and shipped merged fixes in major AI projects (see below).</li>
+                  <li><strong>Clients and product:</strong> deployed the platform with client engineering teams, multi-agent systems with the Claude API, and technical pre-sales.</li>
                 </ul>
               </div>
             </div>
@@ -420,7 +420,7 @@
       <div class="section-header fade-in">
         <span class="section-label">Open Source</span>
         <h2>Upstream Contributions</h2>
-        <p class="section-sub">Six pull requests raised into projects totalling over 200,000 GitHub stars, four merged. Each began as a user-reported bug, went through the optimisation agent I work on, then was reviewed line by line, tested and defended in review by hand.</p>
+        <p class="section-sub">Fixes shipped to major open source AI projects through my work at TurinTech: found with the Artemis agent, then reviewed, tested and defended in review by hand. Four merged, two in review, 200,000+ combined stars.</p>
       </div>
 
       <div class="projects-grid oss-grid">
@@ -430,7 +430,7 @@
             <span class="chip oss-repo">sherpa-onnx &middot; 14k stars</span>
           </div>
           <h3>Float32 catastrophic cancellation in feature normalisation</h3>
-          <p class="project-glance">One quiet audio stream silently emptied every transcript in its batch. Traced to a variance computed as E[x&sup2;] &minus; E[x]&sup2; in float32; fixed with a two-pass estimator. Merged in ten hours.</p>
+          <p class="project-glance">A float32 variance bug let one quiet audio stream empty every transcript in its batch. Two-pass fix, merged in ten hours.</p>
           <div class="chip-row">
             <span class="chip">Numerical stability</span>
             <span class="chip">INT8 quantisation</span>
@@ -441,7 +441,7 @@
             <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><polyline points="6 9 12 15 18 9"/></svg>
           </button>
           <div class="expander-body" id="exp-oss-sherpa">
-            <p>On quiet audio the two variance terms are nearly equal, so cancellation drove the variance to zero, the inverse standard deviation to 1e5, and produced feature outliers around +7515. Those outliers poisoned the INT8 quantisation scale for the whole batch. Shipped with two regression tests and a four-case end-to-end transcript matrix. When the maintainer asked whether a clamp was masking a negative variance, I measured it rather than argued it: the raw float32 difference was -8.07e-3 against a true variance of +5.6e-6.</p>
+            <p>Variance computed as E[x&sup2;] &minus; E[x]&sup2; cancelled to zero on quiet audio, blowing up the normalisation and poisoning the INT8 quantisation scale for the whole batch. Shipped with regression tests and an end-to-end transcript matrix. When the maintainer asked whether a clamp was hiding a negative variance, I measured it: -8.07e-3 raw against a true +5.6e-6.</p>
             <div class="tech-stack">
               <span>C++</span>
               <span>ONNX Runtime</span>
@@ -459,7 +459,7 @@
             <span class="chip oss-repo">WhisperLiveKit &middot; 11k stars</span>
           </div>
           <h3>51.9% less ASR compute for streaming transcription</h3>
-          <p class="project-glance">Streaming ASR was re-transcribing overlapping audio far more often than the audio warranted. Opt-in coalescing of timed ASR calls, measured at -51.9% compute and -19.5% end-to-end latency.</p>
+          <p class="project-glance">Opt-in coalescing of timed ASR calls in streaming transcription: -51.9% compute, -19.5% end-to-end latency.</p>
           <div class="chip-row">
             <span class="chip">-51.9% compute</span>
             <span class="chip">-19.5% latency</span>
@@ -470,7 +470,7 @@
             <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><polyline points="6 9 12 15 18 9"/></svg>
           </button>
           <div class="expander-body" id="exp-oss-wlk">
-            <p>The diagnostic that made the case: the documented tuning lever, min-chunk-size, is inert when voice-activity chunking is on, so users were told to tune a setting that did nothing. Two things I kept in the write-up rather than hiding: an earlier accuracy-improvement claim was retracted after it proved to be within noise, and two silent data-loss bugs were found and fixed during review before the change went upstream.</p>
+            <p>The documented tuning lever (min-chunk-size) turned out to be inert under voice-activity chunking. An earlier accuracy claim was retracted after it proved to be within noise, and two silent data-loss bugs were fixed in review before the change went upstream.</p>
             <div class="tech-stack">
               <span>Python</span>
               <span>Whisper</span>
@@ -488,7 +488,7 @@
             <span class="chip oss-repo">vLLM &middot; 90k stars</span>
           </div>
           <h3>Engine init crashed on recoverable attention backend errors</h3>
-          <p class="project-glance">Probing attention backends raised on recoverable errors instead of recording the failure and moving on, taking the whole engine down. Narrowed the exception clause and surfaced failure reasons.</p>
+          <p class="project-glance">Engine init died on recoverable attention backend errors. Now records the failure and moves on, with explicit reasons.</p>
           <div class="chip-row">
             <span class="chip">Inference serving</span>
             <span class="chip">Error handling</span>
@@ -499,7 +499,7 @@
             <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><polyline points="6 9 12 15 18 9"/></svg>
           </button>
           <div class="expander-body" id="exp-oss-vllm">
-            <p>A controlled rerun with the fix direction removed from the brief produced, in its first generation, the exact design human review had taken two iterations to converge on, including the narrowed exception clause and the failure-reason strings. A second rediscovery attempt on sherpa-onnx failed to find the root cause, reaching only a partial workaround. I report both, because the pair is more credible than either alone.</p>
+            <p>Narrowed the exception clause and surfaced failure-reason strings. A controlled rerun of the agent, with the fix direction removed from the brief, reproduced the reviewed design in its first generation.</p>
             <div class="tech-stack">
               <span>Python</span>
               <span>vLLM</span>
@@ -516,7 +516,7 @@
             <span class="chip oss-repo">unsloth &middot; 75k stars</span>
           </div>
           <h3>Silent lr_warmup_steps no-op under the default scheduler</h3>
-          <p class="project-glance">An advertised warmup setting was silently ignored under the default constant learning-rate scheduler, so users configuring warmup got none.</p>
+          <p class="project-glance">An advertised warmup setting was silently ignored under the default scheduler. Fixed, with a regression test.</p>
           <div class="chip-row">
             <span class="chip">LLM fine-tuning</span>
             <span class="chip">Training schedulers</span>
@@ -527,7 +527,7 @@
             <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><polyline points="6 9 12 15 18 9"/></svg>
           </button>
           <div class="expander-body" id="exp-oss-unsloth">
-            <p>Users setting lr_warmup_steps were getting a constant learning rate from step zero with no warning. The fix makes the setting take effect under the default scheduler and adds a test that would have caught the regression.</p>
+            <p>Users setting lr_warmup_steps got a constant learning rate from step zero with no warning. The setting now takes effect under the default constant scheduler.</p>
             <div class="tech-stack">
               <span>Python</span>
               <span>PyTorch</span>
@@ -544,7 +544,7 @@
             <span class="chip oss-repo">NVIDIA NeMo Speech &middot; 18k stars</span>
           </div>
           <h3>Two diarization and word-confidence fixes, in review</h3>
-          <p class="project-glance">Diarization crashed when batch_size was only set under diarizer.*; word-confidence aggregation crashed on parakeet-tdt-0.6b-v3 transcripts. Both raised August 2026, both open.</p>
+          <p class="project-glance">A diarization config crash and a word-confidence crash on newer Parakeet transcripts. Both open, August 2026.</p>
           <div class="chip-row">
             <span class="chip">Speaker diarization</span>
             <span class="chip">ASR confidence</span>
@@ -555,7 +555,7 @@
             <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><polyline points="6 9 12 15 18 9"/></svg>
           </button>
           <div class="expander-body" id="exp-oss-nemo">
-            <p>Two separate pull requests: one coalesces a missing batch_size in the ClusteringDiarizer dataloader configs, the other derives word-confidence boundaries from the decoded text itself so the aggregation no longer depends on a token layout that newer models do not produce.</p>
+            <p>One PR coalesces a missing batch_size in the ClusteringDiarizer dataloader configs; the other derives word-confidence boundaries from the decoded text so aggregation no longer depends on a token layout newer models do not produce.</p>
             <div class="tech-stack">
               <span>Python</span>
               <span>NeMo</span>
@@ -1129,6 +1129,6 @@
     </div>
   </footer>
 
-  <script src="script.js?v=8"></script>
+  <script src="script.js?v=9"></script>
 </body>
 </html>
