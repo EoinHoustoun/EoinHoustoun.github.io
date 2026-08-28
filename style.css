@@ -1274,6 +1274,8 @@ section:nth-child(even) {
 .badge-nlp       { background: rgba(37, 99, 235, 0.15);  color: #93c5fd; border: 1px solid rgba(37, 99, 235, 0.25); }
 .badge-ds        { background: rgba(219, 39, 119, 0.15); color: #f9a8d4; border: 1px solid rgba(219, 39, 119, 0.25); }
 .badge-sports    { background: rgba(22, 163, 74, 0.15);  color: #86efac; border: 1px solid rgba(22, 163, 74, 0.25); }
+.badge-oss       { background: rgba(0, 212, 255, 0.15);  color: #7de8ff; border: 1px solid rgba(0, 212, 255, 0.30); }
+.badge-oss-open  { background: rgba(217, 119, 6, 0.15);  color: #fcd34d; border: 1px solid rgba(217, 119, 6, 0.25); }
 
 /* Springer badge */
 .springer-badge {
@@ -2239,6 +2241,8 @@ footer {
 [data-theme="light"] .badge-nlp      { background: rgba(37,99,235,0.12);  color: #1d4ed8; border-color: rgba(37,99,235,0.28); }
 [data-theme="light"] .badge-ds       { background: rgba(219,39,119,0.12); color: #be185d; border-color: rgba(219,39,119,0.28); }
 [data-theme="light"] .badge-sports   { background: rgba(22,163,74,0.12);  color: #15803d; border-color: rgba(22,163,74,0.28); }
+[data-theme="light"] .badge-oss      { background: rgba(0,150,190,0.12);  color: #066a86; border-color: rgba(0,150,190,0.30); }
+[data-theme="light"] .badge-oss-open { background: rgba(217,119,6,0.12);  color: #b45309; border-color: rgba(217,119,6,0.28); }
 [data-theme="light"] .pub-peer       { background: rgba(124,58,237,0.12); color: #6d28d9; border-color: rgba(124,58,237,0.28); }
 [data-theme="light"] .pub-aiai       { background: rgba(5,150,105,0.12);  color: #047857; border-color: rgba(5,150,105,0.28); }
 [data-theme="light"] .live-badge     { background: rgba(5,150,105,0.12);  color: #047857; border-color: rgba(5,150,105,0.25); }
@@ -2437,3 +2441,15 @@ section:nth-child(even) { background-color: rgba(17, 17, 17, 0.72); }
   /* Ensure scroll-reveal content is never left stuck invisible */
   .fade-in { opacity: 1 !important; transform: none !important; }
 }
+
+/* ===== OPEN SOURCE SECTION ===== */
+.section-sub {
+  max-width: 720px;
+  margin: 16px auto 0;
+  color: var(--text-primary);
+  font-size: 1.02rem;
+  line-height: 1.6;
+}
+.oss-repo { margin-left: auto; }
+#opensource { padding-top: 64px; }
+#opensource .card-header { align-items: center; flex-wrap: wrap; gap: 8px; }
