@@ -27,7 +27,7 @@
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&display=swap" rel="stylesheet">
-  <link rel="stylesheet" href="style.css?v=9">
+  <link rel="stylesheet" href="style.css?v=10">
 </head>
 <body>
 
@@ -178,7 +178,7 @@
             <div class="stat-label">Clinical AI<br>Tools Deployed</div>
           </div>
           <div class="stat-card">
-            <div class="stat-number">4</div>
+            <div class="stat-number">6</div>
             <div class="stat-label">Open Source<br>PRs Merged</div>
           </div>
         </div>
@@ -420,151 +420,43 @@
       <div class="section-header fade-in">
         <span class="section-label">Open Source</span>
         <h2>Upstream Contributions</h2>
-        <p class="section-sub">Fixes shipped to major open source AI projects through my work at TurinTech: found with the Artemis agent, then reviewed, tested and defended in review by hand. Four merged, two in review, 200,000+ combined stars.</p>
+        <p class="section-sub">Fixes merged into major open source AI projects through my work at TurinTech: found with the Artemis agent, then reviewed, tested and defended in review by hand. Over 200,000 combined GitHub stars.</p>
       </div>
 
       <div class="projects-grid oss-grid">
-        <div class="project-card fade-in">
-          <div class="card-header">
-            <span class="category-badge badge-oss">Merged</span>
-            <span class="chip oss-repo">sherpa-onnx &middot; 14k stars</span>
-          </div>
-          <h3>Float32 catastrophic cancellation in feature normalisation</h3>
-          <p class="project-glance">A float32 variance bug let one quiet audio stream empty every transcript in its batch. Two-pass fix, merged in ten hours.</p>
-          <div class="chip-row">
-            <span class="chip">Numerical stability</span>
-            <span class="chip">INT8 quantisation</span>
-            <span class="chip">C++</span>
-          </div>
-          <button class="expander-toggle" type="button" aria-expanded="false" aria-controls="exp-oss-sherpa">
-            <span class="expander-label">Details</span>
-            <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><polyline points="6 9 12 15 18 9"/></svg>
-          </button>
-          <div class="expander-body" id="exp-oss-sherpa">
-            <p>Variance computed as E[x&sup2;] &minus; E[x]&sup2; cancelled to zero on quiet audio, blowing up the normalisation and poisoning the INT8 quantisation scale for the whole batch. Shipped with regression tests and an end-to-end transcript matrix. When the maintainer asked whether a clamp was hiding a negative variance, I measured it: -8.07e-3 raw against a true +5.6e-6.</p>
-            <div class="tech-stack">
-              <span>C++</span>
-              <span>ONNX Runtime</span>
-              <span>Welford variance</span>
-              <span>Regression tests</span>
-            </div>
-          </div>
-          <div class="card-actions">
-            <a href="https://github.com/k2-fsa/sherpa-onnx/pull/3857" target="_blank" rel="noopener" class="card-btn">View pull request →</a>
-          </div>
-        </div>
-        <div class="project-card fade-in">
-          <div class="card-header">
-            <span class="category-badge badge-oss">Merged</span>
-            <span class="chip oss-repo">WhisperLiveKit &middot; 11k stars</span>
-          </div>
-          <h3>51.9% less ASR compute for streaming transcription</h3>
-          <p class="project-glance">Opt-in coalescing of timed ASR calls in streaming transcription: -51.9% compute, -19.5% end-to-end latency.</p>
-          <div class="chip-row">
-            <span class="chip">-51.9% compute</span>
-            <span class="chip">-19.5% latency</span>
-            <span class="chip">Streaming ASR</span>
-          </div>
-          <button class="expander-toggle" type="button" aria-expanded="false" aria-controls="exp-oss-wlk">
-            <span class="expander-label">Details</span>
-            <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><polyline points="6 9 12 15 18 9"/></svg>
-          </button>
-          <div class="expander-body" id="exp-oss-wlk">
-            <p>The documented tuning lever (min-chunk-size) turned out to be inert under voice-activity chunking. An earlier accuracy claim was retracted after it proved to be within noise, and two silent data-loss bugs were fixed in review before the change went upstream.</p>
-            <div class="tech-stack">
-              <span>Python</span>
-              <span>Whisper</span>
-              <span>Benchmarking</span>
-              <span>Welch t-test</span>
-            </div>
-          </div>
-          <div class="card-actions">
-            <a href="https://github.com/QuentinFuxa/WhisperLiveKit/pull/391" target="_blank" rel="noopener" class="card-btn">View pull request →</a>
-          </div>
-        </div>
-        <div class="project-card fade-in">
-          <div class="card-header">
-            <span class="category-badge badge-oss">Merged</span>
-            <span class="chip oss-repo">vLLM &middot; 90k stars</span>
-          </div>
-          <h3>Engine init crashed on recoverable attention backend errors</h3>
-          <p class="project-glance">Engine init died on recoverable attention backend errors. Now records the failure and moves on, with explicit reasons.</p>
-          <div class="chip-row">
-            <span class="chip">Inference serving</span>
-            <span class="chip">Error handling</span>
-            <span class="chip">Python</span>
-          </div>
-          <button class="expander-toggle" type="button" aria-expanded="false" aria-controls="exp-oss-vllm">
-            <span class="expander-label">Details</span>
-            <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><polyline points="6 9 12 15 18 9"/></svg>
-          </button>
-          <div class="expander-body" id="exp-oss-vllm">
-            <p>Narrowed the exception clause and surfaced failure-reason strings. A controlled rerun of the agent, with the fix direction removed from the brief, reproduced the reviewed design in its first generation.</p>
-            <div class="tech-stack">
-              <span>Python</span>
-              <span>vLLM</span>
-              <span>Attention backends</span>
-            </div>
-          </div>
-          <div class="card-actions">
-            <a href="https://github.com/vllm-project/vllm/pull/51703" target="_blank" rel="noopener" class="card-btn">View pull request →</a>
-          </div>
-        </div>
-        <div class="project-card fade-in">
-          <div class="card-header">
-            <span class="category-badge badge-oss">Merged</span>
-            <span class="chip oss-repo">unsloth &middot; 75k stars</span>
-          </div>
-          <h3>Silent lr_warmup_steps no-op under the default scheduler</h3>
-          <p class="project-glance">An advertised warmup setting was silently ignored under the default scheduler. Fixed, with a regression test.</p>
-          <div class="chip-row">
-            <span class="chip">LLM fine-tuning</span>
-            <span class="chip">Training schedulers</span>
-            <span class="chip">Python</span>
-          </div>
-          <button class="expander-toggle" type="button" aria-expanded="false" aria-controls="exp-oss-unsloth">
-            <span class="expander-label">Details</span>
-            <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><polyline points="6 9 12 15 18 9"/></svg>
-          </button>
-          <div class="expander-body" id="exp-oss-unsloth">
-            <p>Users setting lr_warmup_steps got a constant learning rate from step zero with no warning. The setting now takes effect under the default constant scheduler.</p>
-            <div class="tech-stack">
-              <span>Python</span>
-              <span>PyTorch</span>
-              <span>Transformers</span>
-            </div>
-          </div>
-          <div class="card-actions">
-            <a href="https://github.com/unslothai/unsloth/pull/8464" target="_blank" rel="noopener" class="card-btn">View pull request →</a>
-          </div>
-        </div>
-        <div class="project-card fade-in">
-          <div class="card-header">
-            <span class="category-badge badge-oss-open">In review</span>
-            <span class="chip oss-repo">NVIDIA NeMo Speech &middot; 18k stars</span>
-          </div>
-          <h3>Two diarization and word-confidence fixes, in review</h3>
-          <p class="project-glance">A diarization config crash and a word-confidence crash on newer Parakeet transcripts. Both open, August 2026.</p>
-          <div class="chip-row">
-            <span class="chip">Speaker diarization</span>
-            <span class="chip">ASR confidence</span>
-            <span class="chip">Open</span>
-          </div>
-          <button class="expander-toggle" type="button" aria-expanded="false" aria-controls="exp-oss-nemo">
-            <span class="expander-label">Details</span>
-            <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><polyline points="6 9 12 15 18 9"/></svg>
-          </button>
-          <div class="expander-body" id="exp-oss-nemo">
-            <p>One PR coalesces a missing batch_size in the ClusteringDiarizer dataloader configs; the other derives word-confidence boundaries from the decoded text so aggregation no longer depends on a token layout newer models do not produce.</p>
-            <div class="tech-stack">
-              <span>Python</span>
-              <span>NeMo</span>
-              <span>Hydra config</span>
-            </div>
-          </div>
-          <div class="card-actions">
-            <a href="https://github.com/NVIDIA-NeMo/Speech/pull/16063" target="_blank" rel="noopener" class="card-btn">View pull request →</a>
-          </div>
+        <div class="project-card oss-card fade-in">
+          <ul class="oss-list">
+            <li class="oss-row">
+              <a href="https://github.com/vllm-project/vllm/pull/51703" target="_blank" rel="noopener" class="oss-name">vLLM</a>
+              <span class="chip oss-stars">90k stars</span>
+              <span class="oss-desc">Engine initialisation robustness fix</span>
+              <span class="category-badge badge-oss">Merged</span>
+            </li>
+            <li class="oss-row">
+              <a href="https://github.com/unslothai/unsloth/pull/8464" target="_blank" rel="noopener" class="oss-name">unsloth</a>
+              <span class="chip oss-stars">75k stars</span>
+              <span class="oss-desc">Learning-rate warmup scheduler fix</span>
+              <span class="category-badge badge-oss">Merged</span>
+            </li>
+            <li class="oss-row">
+              <a href="https://github.com/NVIDIA-NeMo/Speech/pull/16063" target="_blank" rel="noopener" class="oss-name">NVIDIA NeMo Speech</a>
+              <span class="chip oss-stars">18k stars</span>
+              <span class="oss-desc">Diarization config and word-confidence fixes</span>
+              <span class="category-badge badge-oss">Merged</span>
+            </li>
+            <li class="oss-row">
+              <a href="https://github.com/k2-fsa/sherpa-onnx/pull/3857" target="_blank" rel="noopener" class="oss-name">sherpa-onnx</a>
+              <span class="chip oss-stars">14k stars</span>
+              <span class="oss-desc">Float32 numerical stability fix in feature normalisation</span>
+              <span class="category-badge badge-oss">Merged</span>
+            </li>
+            <li class="oss-row">
+              <a href="https://github.com/QuentinFuxa/WhisperLiveKit/pull/391" target="_blank" rel="noopener" class="oss-name">WhisperLiveKit</a>
+              <span class="chip oss-stars">11k stars</span>
+              <span class="oss-desc">Streaming ASR optimisation, -51.9% compute</span>
+              <span class="category-badge badge-oss">Merged</span>
+            </li>
+          </ul>
         </div>
       </div>
     </div>
@@ -1129,6 +1021,6 @@
     </div>
   </footer>
 
-  <script src="script.js?v=9"></script>
+  <script src="script.js?v=10"></script>
 </body>
 </html>

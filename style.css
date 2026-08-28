@@ -2452,4 +2452,14 @@ section:nth-child(even) { background-color: rgba(17, 17, 17, 0.72); }
 }
 .oss-repo { margin-left: auto; }
 #opensource { padding-top: 64px; }
-#opensource .card-header { align-items: center; flex-wrap: wrap; gap: 8px; }
+.oss-card { grid-column: 1 / -1; padding: 8px 20px; }
+.oss-list { list-style: none; margin: 0; padding: 0; }
+.oss-row { display: grid; grid-template-columns: 180px 96px 1fr auto; align-items: center; gap: 14px; padding: 12px 0; border-bottom: 1px solid rgba(128,128,128,0.18); }
+.oss-row:last-child { border-bottom: none; }
+.oss-name { font-weight: 700; color: var(--text-primary); text-decoration: none; font-size: 1.02rem; }
+.oss-name:hover { color: var(--accent); }
+.oss-desc { color: var(--text-primary); font-size: 0.95rem; }
+@media (max-width: 720px) {
+  .oss-row { grid-template-columns: 1fr auto; row-gap: 6px; }
+  .oss-desc { grid-column: 1 / -1; }
+}
